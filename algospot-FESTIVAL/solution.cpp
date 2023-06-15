@@ -4,5 +4,5 @@ using namespace std;
 
 int main()
 {
-	cout << "in solution\n";
+	cout << "im solution\n";
 }
