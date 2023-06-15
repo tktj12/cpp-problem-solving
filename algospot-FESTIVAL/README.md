@@ -9,5 +9,5 @@ https://algospot.com/judge/problem/read/FESTIVAL
 
 ```
 O(n) = n(n+1)  
-     = n<sup>2</sup>
+     = (n^2)
 ```
