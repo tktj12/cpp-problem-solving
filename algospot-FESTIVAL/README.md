@@ -13,7 +13,7 @@ O(n) = n(n+1) = n<sup>2</sup>
 # Learning
 
 * cout의 소수 표현법에 정확도가 달라진다.
-* cout 사용시 소수점 아래로 8자리까지 표시하려면 :
-` cout << fixed `
+* cout 사용시 소수점 아래로 8자리까지 표시하려면 :   
+` cout << fixed `   
 ` cout.precision(8) `
 단 9자리에서 반올림 됨
