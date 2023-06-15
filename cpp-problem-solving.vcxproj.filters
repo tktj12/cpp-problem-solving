@@ -18,5 +18,11 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="algospot-FESTIVAL\solution.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="algospot-FESTIVAL\README.md" />
   </ItemGroup>
 </Project>
