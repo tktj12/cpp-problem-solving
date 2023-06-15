@@ -19,3 +19,5 @@ cout << fixed
 cout.precision(8)
 ```
 단 9자리에서 반올림 됨
+
+https://pmoncode.tistory.com/20
