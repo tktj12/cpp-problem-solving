@@ -7,5 +7,7 @@ https://algospot.com/judge/problem/read/FESTIVAL
 2. P일~(P+L-1)일의 평균부터 P일~N일의 평균까지 계산
 3. P의 값이 1 부터 시작해서 N-L+1까지 과정 1,2를 반복해서 평균이 가장 낮은 값을 찾는다.
 
-    O(n) = n(n+1)  
-        = n<sup>2</sup>'
+'''
+O(n) = n(n+1)  
+     = n<sup>2</sup>'
+'''
