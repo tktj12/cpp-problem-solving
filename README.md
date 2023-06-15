@@ -1,1 +1,1 @@
-# cpp-problem-solving
+# A collection of problems and solutions
