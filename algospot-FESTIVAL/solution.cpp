@@ -18,25 +18,23 @@ int main()
 	{
 		int N, L;
 		cin >> N >> L;
-		for (int i = 0; i < N; i++)
+		for (int i = 1; i <= N; i++)
 			cin >> cost[i];
 
-		double min = 100000., dL = (double)L;
-		for (int i = 0; i < N - L + 1; i++)
+		double min = 100000.;
+		for (int i = 1; i <= N - L + 1; i++)
 		{
-			int sum = 0;
-			for (int j = 0; j < L; j++)
-				sum += cost[i + j];
+			int sum = 0, j;
+			for (j = i; j < i + L; j++)
+				sum += cost[j];
 			
-			double tp = (double)sum / dL;
-			if (tp < min)
-				min = tp;
-			for (int j = 1; j < N - i - L + 1; j++)
+			double tp = (double)sum / (double)L;
+			if (tp < min) min = tp;
+			for (j = i+L; j <= N; j++)
 			{
-				sum += cost[i + L + j - 1];
-				tp = (double)sum / (dL + (double)j);
-				if (tp < min)
-					min = tp;
+				sum += cost[j];
+				tp = (double)sum / (double)(j-i+1);
+				if (tp < min) min = tp;
 			}
 		}
 
