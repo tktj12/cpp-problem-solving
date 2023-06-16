@@ -2,22 +2,22 @@ https://algospot.com/judge/problem/read/FESTIVAL
 
 # Solving
 
-* ¹æ¹ý 1 - ¹«½ÄÇÏ°Ô °è»êÇÏ´Â ¹æ¹ý
-1. ¸ÕÀú ±âÁØÀÌ µÇ´Â³¯ i¸¦ Àâ´Â´Ù.
-2. iÀÏ~(P+L-1)ÀÏÀÇ Æò±ÕºÎÅÍ PÀÏ~NÀÏÀÇ Æò±Õ±îÁö °è»ê
-3. iÀÇ °ªÀÌ 1 ºÎÅÍ ½ÃÀÛÇØ¼­ N-L+1±îÁö °úÁ¤ 1,2¸¦ ¹Ýº¹ÇØ¼­ Æò±ÕÀÌ °¡Àå ³·Àº °ªÀ» Ã£´Â´Ù.
+* ë°©ë²• 1 - ë¬´ì‹í•˜ê²Œ ê³„ì‚°í•˜ëŠ” ë°©ë²•
+1. ë¨¼ì € ê¸°ì¤€ì´ ë˜ëŠ”ë‚  ië¥¼ ìž¡ëŠ”ë‹¤.
+2. iì¼~(P+L-1)ì¼ì˜ í‰ê· ë¶€í„° Pì¼~Nì¼ì˜ í‰ê· ê¹Œì§€ ê³„ì‚°
+3. iì˜ ê°’ì´ 1 ë¶€í„° ì‹œìž‘í•´ì„œ N-L+1ê¹Œì§€ ê³¼ì • 1,2ë¥¼ ë°˜ë³µí•´ì„œ í‰ê· ì´ ê°€ìž¥ ë‚®ì€ ê°’ì„ ì°¾ëŠ”ë‹¤.
 
 O(n) = n(n+1) = n<sup>2</sup>
 
 
 # Learning
 
-* coutÀÇ ¼Ò¼ö Ç¥Çö¹ý¿¡ Á¤È®µµ°¡ ´Þ¶óÁø´Ù.
-* cout »ç¿ë½Ã ¼Ò¼öÁ¡ ¾Æ·¡·Î 8ÀÚ¸®±îÁö Ç¥½ÃÇÏ·Á¸é :   
+* coutì˜ ì†Œìˆ˜ í‘œí˜„ë²•ì— ì •í™•ë„ê°€ ë‹¬ë¼ì§„ë‹¤.
+* cout ì‚¬ìš©ì‹œ ì†Œìˆ˜ì  ì•„ëž˜ë¡œ 8ìžë¦¬ê¹Œì§€ í‘œì‹œí•˜ë ¤ë©´ :   
 ```
 cout << fixed 
 cout.precision(8)
 ```
-´Ü 9ÀÚ¸®¿¡¼­ ¹Ý¿Ã¸² µÊ
+ë‹¨ 9ë²ˆì§¸ ìžë¦¬ì—ì„œ ë°˜ì˜¬ë¦¼ ë¨
 
 https://pmoncode.tistory.com/20
