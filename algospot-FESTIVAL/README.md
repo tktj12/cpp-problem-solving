@@ -1,4 +1,6 @@
-https://algospot.com/judge/problem/read/FESTIVAL
+# Problem
+* https://algospot.com/judge/problem/read/FESTIVAL
+* 난이도 : 하
 
 # Solving
 
