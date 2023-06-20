@@ -1,5 +1,6 @@
 # Problem
 * https://algospot.com/judge/problem/read/PICNIC
+* 가능한 모든 짝의 조합을 구하는 문제
 * 난이도 : 하
 
 # Solution
