@@ -20,4 +20,4 @@ $$O\left( \prod_{k=1}^\frac{N}{2} {2k-1} \right) = O((N-1)!!) = O(N!!)$$
 https://torbjorn.tistory.com/257
 
 * vector의 push_back() 함수는 값을 복사해서 새 원소를 생성한다.
-* push_back({1, 2}) 처럼 쓸 수 있다.
+* `v.push_back({1, 2})` 처럼 쓸 수 있다.
