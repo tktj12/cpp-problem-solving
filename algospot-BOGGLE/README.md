@@ -1,5 +1,6 @@
 # Problem
 * https://algospot.com/judge/problem/read/BOGGLE
+* 5x5 알파벳 판에서 특정 문자열을 만들 수 있는지 판별하는 문제
 * 난이도 : 하
 
 # Solution
