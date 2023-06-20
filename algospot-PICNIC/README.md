@@ -13,9 +13,10 @@
 * 시간 복잡도 :
 $$O\left( \prod_{k=1}^\frac{N}{2} {2k-1} \right) = O((N-1)!!) = O(N!!)$$
 
-* 시간 복잡도는 $O(N!!)$ (N 멀티팩토리얼)이지만 문제의 N이 최대 10이기때문에 시간 초과가 나지 않는다.
+* 시간 복잡도는 $O(N!!)$ 이지만 문제의 N이 최대 10이기때문에 시간 초과가 나지 않는다.
 
 # Learning
+* !! : 더블팩토리얼이다. https://freshrimpsushi.github.io/posts/factorial-double-factorial-multifactorial/
 * C++언어의 구글식 명명법에 관한 글을 읽었다.
 https://torbjorn.tistory.com/257
 
