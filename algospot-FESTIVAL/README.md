@@ -1,5 +1,6 @@
 # Problem
 * https://algospot.com/judge/problem/read/FESTIVAL
+* 길이가 L 이상이고 연속된 원소로 이루어진 부분집합의 평균 중 최소값을 구하는 문제
 * 난이도 : 하
 
 # Solving
