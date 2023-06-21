@@ -1,7 +1,7 @@
 # Problem
 * https://algospot.com/judge/problem/read/CLOCKSYNC
 * 스위치를 눌러 16개의 시계를 모두 12시를 가리키게 만드는 방법 중 스위치를 최소한으로 누르는 방법을 구하는 문제
-* 난이도 : 중
+* 난이도 : 하
 
 # Solution
 
@@ -16,5 +16,3 @@
   * $O(4^n)$
 
 * 이 문제는 n이 최대 10으로 시간 안에 풀기에 문제가 없었다.
-
-# Learning
