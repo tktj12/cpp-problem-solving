@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algospot-BOARDCOVER\solution1.cpp" />
+    <ClCompile Include="algospot-CLOCKSYNC\solution1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="algospot-BOARDCOVER\README.md" />
+    <None Include="algospot-CLOCKSYNC\README.md" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
