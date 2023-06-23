@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algospot-QUADTREE\solution1.cpp" />
+    <ClCompile Include="algospot-FENCE\solution1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="algospot-QUADTREE\README.md" />
+    <Text Include="algospot-FENCE\README.md" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
