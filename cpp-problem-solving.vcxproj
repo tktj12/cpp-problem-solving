@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algospot-FENCE\solution1.cpp" />
+    <ClCompile Include="algospot-FENCE\solution3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="algospot-FENCE\README.md" />
