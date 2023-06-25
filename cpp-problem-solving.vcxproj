@@ -22,7 +22,7 @@
     <Text Include="algospot-FANMEETING\README.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algospot-FANMEETING\solution2.cpp" />
+    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
