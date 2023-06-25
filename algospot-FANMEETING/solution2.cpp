@@ -67,7 +67,7 @@ void BigBitShift(vector<ULL>& bit)
 {
 	bit[0] <<= 1;
 	for (int i = 1; i < bit.size(); ++i) {
-		if (bit[i] & (1ULL << 63)) bit[i - 1] |= 1;
+		bit[i - 1] |= (bit[i] >> 63);
 		bit[i] <<= 1;
 	}
 }
