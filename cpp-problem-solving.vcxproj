@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algospot-JUMPGAME\solution1.cpp" />
+    <ClCompile Include="algospot-WILDCARD\solution1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="algospot-JUMPGAME\README.md" />
+    <None Include="algospot-WILDCARD\README.md" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
