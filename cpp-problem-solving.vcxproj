@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algospot-WILDCARD\solution1.cpp" />
+    <ClCompile Include="algospot-WILDCARD\solution2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="algospot-WILDCARD\README.md" />
