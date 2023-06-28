@@ -19,10 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algospot-WILDCARD\solution2.cpp" />
+    <ClCompile Include="algospot-LIS\solution1.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="algospot-WILDCARD\README.md" />
+    <None Include="algospot-LIS\README.md" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
