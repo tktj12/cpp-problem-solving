@@ -34,16 +34,15 @@ int LenOfJLIS(int a, int b)
 {
 	int& ret = cache[a][b];
 	if (ret) return ret;
-
-	ret = 1;
+	
 	long long tail = max(A[a], B[b]);
 	for (int i = a + 1; i < A.size(); ++i)
 		if (A[i] > tail)
-			ret = max(ret, 1+LenOfJLIS(i, b));
+			ret = max(ret, LenOfJLIS(i, b));
 
 	for (int i = b + 1; i < B.size(); ++i)
 		if (B[i] > tail)
-			ret = max(ret, 1+LenOfJLIS(a, i));
+			ret = max(ret, LenOfJLIS(a, i));
 	
-	return ret;
+	return ++ret;
 }
