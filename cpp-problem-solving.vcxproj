@@ -19,10 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algospot-LIS\solution1.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="algospot-LIS\README.md" />
+    <ClCompile Include="algospot-BOGGLE\solution2.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
