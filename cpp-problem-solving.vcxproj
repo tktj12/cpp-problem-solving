@@ -19,10 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algospot-QUANTIZE\solution1.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="algospot-QUANTIZE\README.md" />
+    <ClCompile Include="algospot-TPIPATHCNT\solution1.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
