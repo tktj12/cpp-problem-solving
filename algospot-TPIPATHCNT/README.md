@@ -1,5 +1,5 @@
 # Problem
-* https://algospot.com/judge/problem/read/QUANTIZE
+* https://algospot.com/judge/problem/read/TRIPATHCNT
 * 삼각형 모양의 트리에서 최대값을 갖는 경로의 수 구하기
 * 난이도 : 하
 

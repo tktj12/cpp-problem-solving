@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algospot-TPIPATHCNT\solution1.cpp">
+    <ClCompile Include="algospot-ASYMTILING\solution1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
