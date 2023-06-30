@@ -1,7 +1,7 @@
 # Problem
 * https://algospot.com/judge/problem/read/QUANTIZE
 * S개의 수로 분산이 최소가 되게 수열 양자화 하기
-* 난이도 : 
+* 난이도 : 하
 
 # Solution
 * 수열을 정렬하여 풀 수 있다.
