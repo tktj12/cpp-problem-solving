@@ -15,11 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algospot-PI\solution1.cpp">
+    <ClCompile Include="algospot-QUANTIZE\solution1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="algospot-PI\README.md" />
+    <None Include="algospot-QUANTIZE\README.md" />
   </ItemGroup>
 </Project>
