@@ -33,7 +33,7 @@
   * $O(n^2d)$
 
 # Learning
-* `double`변수의 비트값이 전부 1인 상태 `0xFFFFFFFFFFFFFFFF` 이면, nan으로 처리된다.
+* `double`변수의 비트값이 전부 1인 상태 `0xFFFFFFFFFFFFFFFF` 이면, `nan`으로 처리된다.
 * `double d = 0xFFFFFFFFFFFFFFFF` 이후에 d의 비트값을 확인하면   
 `0x43F0000000000000` 이다. 즉 16비트 표현으로 값을 대입해도 비트값이 그대로 옮겨지진 않는다.   
-따라서 double형은 memset이나 형변환으로 비트값을 직접 할당해야 한다.
+따라서 `double`형은 `memset`이나 형변환으로 비트값을 직접 할당해야 한다.
