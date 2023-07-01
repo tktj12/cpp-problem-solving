@@ -1,15 +1,15 @@
 # Problem
 * https://algospot.com/judge/problem/read/POLY
-* ¼¼·Î ´ÜÁ¶ÀÎ N Æú¸®¿À¹Ì³ëÀÇ °³¼ö
-* ³­ÀÌµµ : Áß
+* ì„¸ë¡œ ë‹¨ì¡°ì¸ N í´ë¦¬ì˜¤ë¯¸ë…¸ì˜ ê°œìˆ˜
+* ë‚œì´ë„ : ì¤‘
 
 # Solution
 
-### ¹æ¹ý 1 : µ¿Àû °èÈ¹¹ý
-* Ç®ÀÌ
-  * ¼¼·Î ´ÜÁ¶ÀÎ Á¡À» »ý°¢ÇÏ¸é, ¹Ù·Î À§ÂÊ ÁÙ¿¡ ºí·°ÀÌ ¸î °³ ÀÖ´ÂÁö¿Í ³²Àº ºí·°ÀÌ ¸î °³ ÀÖ´ÂÁö¿¡ µû¶ó 
-¾Æ·¡ÂÊ ºí·°ÀÇ °æ¿ìÀÇ ¼ö°¡ °áÁ¤µÈ´Ù.
-  * ÀÌ°ÍÀ» Åä´ë·Î $DP(upstair blocks, remainder)$ ÇÔ¼ö¸¦ ±¸ÇöÇÑ´Ù.
+### ë°©ë²• 1 : ë™ì  ê³„íšë²•
+* í’€ì´
+  * ì„¸ë¡œ ë‹¨ì¡°ì¸ ì ì„ ìƒê°í•˜ë©´, ë°”ë¡œ ìœ„ìª½ ì¤„ì— ë¸”ëŸ­ì´ ëª‡ ê°œ ìžˆëŠ”ì§€ì™€ ë‚¨ì€ ë¸”ëŸ­ì´ ëª‡ ê°œ ìžˆëŠ”ì§€ì— ë”°ë¼ 
+ì•„ëž˜ìª½ ë¸”ëŸ­ì˜ ê²½ìš°ì˜ ìˆ˜ê°€ ê²°ì •ëœë‹¤.
+  * ì´ê²ƒì„ í† ëŒ€ë¡œ $DP(upstair$ $blocks, remainder)$ í•¨ìˆ˜ë¥¼ êµ¬í˜„í•œë‹¤.
 
-* ½Ã°£ º¹Àâµµ :
+* ì‹œê°„ ë³µìž¡ë„ :
   * $O(N^3)$
