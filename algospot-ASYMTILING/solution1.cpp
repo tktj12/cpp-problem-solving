@@ -18,16 +18,11 @@ int main()
 	int tc;
 	cin >> tc;
 	while (tc--) {
-		int n;
+		int n, symmetric_cases;
 		cin >> n;
-		int symmetric_cases = all_cases[n / 2];
-		if (n % 2 == 0) symmetric_cases = (symmetric_cases + all_cases[n / 2 - 1]) % MOD_NUM;
-		
-		int res;
-		if (all_cases[n] < symmetric_cases)
-			res = MOD_NUM + all_cases[n] - symmetric_cases;
-		else res = all_cases[n] - symmetric_cases;
-		cout << res % MOD_NUM << '\n';
+		if (n % 2 == 0) symmetric_cases = (all_cases[n/2] + all_cases[n/2 - 1]) % MOD_NUM;
+		else symmetric_cases = all_cases[n/2];
+		cout << (MOD_NUM + all_cases[n] - symmetric_cases) % MOD_NUM << '\n';
 	}
 	return 0;
 }
