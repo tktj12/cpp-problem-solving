@@ -54,14 +54,12 @@ int Memoization(int idx, int capacity)
 
 void FindBest(int idx, int capacity, vector<int>& result)
 {
-	if (idx == N || capacity == 0) return;
+	if (idx == N) return;
 
-	if (capacity >= weight[idx] && 
-		cache[idx + 1][capacity] < cache[idx + 1][capacity - weight[idx]] + value[idx])
-	{
+	if (cache[idx][capacity] == cache[idx + 1][capacity])
+		FindBest(idx + 1, capacity, result);
+	else {
 		result.push_back(idx);
 		FindBest(idx + 1, capacity - weight[idx], result);
 	}
-	else
-		FindBest(idx + 1, capacity, result);
 }
