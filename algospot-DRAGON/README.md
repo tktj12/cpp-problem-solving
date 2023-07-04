@@ -1,29 +1,31 @@
 # Problem
 * https://algospot.com/judge/problem/read/DRAGON
-* ±ÔÄ¢À» °®°í ´Ã¾î³ª´Â ¹®ÀÚ¿­ÀÇ p~(p+l)¹øÂ° ¹®ÀÚ ±¸ÇÏ±â
-* ³­ÀÌµµ : 
+* ê·œì¹™ì„ ê°–ê³  ëŠ˜ì–´ë‚˜ëŠ” ë¬¸ìžì—´ì˜ p~(p+l)ë²ˆì§¸ ë¬¸ìž êµ¬í•˜ê¸°
+* ë‚œì´ë„ : 
 
 # Solution
 
-### ¹æ¹ý 1 : ¹®Á¦ ±×´ë·Î ÄÚµù
-* Ç®ÀÌ
-  * $MakeString(string)$ ÇÔ¼ö´Â ÀÔ·ÂÀ¸·Î ¹ÞÀº $string$ ¹®ÀÚ¿­¿¡¼­ ¸ðµç X, Y¸¦ Ã£¾Æ ±ÔÄ¢¿¡ ¸Â°Ô º¯È¯ÇÏ¿© ¹ÝÈ¯ÇÑ´Ù.
+### ë°©ë²• 1 : ë¬¸ì œ ê·¸ëŒ€ë¡œ ì½”ë”©
+* í’€ì´
+  * $MakeString(string)$ í•¨ìˆ˜ëŠ” ìž…ë ¥ìœ¼ë¡œ ë°›ì€ $string$ ë¬¸ìžì—´ì—ì„œ ëª¨ë“  X, Yë¥¼ ì°¾ì•„ ê·œì¹™ì— ë§žê²Œ ë³€í™˜í•˜ì—¬ ë°˜í™˜í•œë‹¤.
 
-* ½Ã°£ º¹Àâµµ :
-  * $O(2^N)$
+* ì‹œê°„ ë³µìž¡ë„ :
+  * $O(2^n)$
 <br></br>
 
-### ¹æ¹ý 2 : ¼û°ÜÁø ±ÔÄ¢À» Ã£¾Æ¼­ Ç®ÀÌ
-* Ç®ÀÌ
-  * ¾Æ·¡¿¡ ±¸ÇÑ ±ÔÄ¢À» Åä´ë·Î °è»ê
-  * $n$¼¼´ëÀÇ ¹®ÀÚ¿­ $G_n = G_{n-1}+G_{n-2}-G_{n-3}-...-G_1-G_0-YF$, $G_0=XF$
-  * $n$¼¼´ëÀÇ ¹®ÀÚ¿­ °¹¼ö $C_n = 2^{n-1}*3+C_{n-1}$, $C_0 = 2$
+### ë°©ë²• 2 : ìˆ¨ê²¨ì§„ ê·œì¹™ì„ ì°¾ì•„ì„œ í’€ì´
+* í’€ì´
+  * ì•„ëž˜ì— êµ¬í•œ ê·œì¹™ì„ í† ëŒ€ë¡œ ê³„ì‚°
+  * $n$ì„¸ëŒ€ì˜ ë¬¸ìžì—´ $G_n => G_{n-1}+G_{n-2}-G_{n-3}-...-G_1-G_0-YF$   
+    $G_0=>FX$
+  * $n$ì„¸ëŒ€ì˜ ë¬¸ìžì—´ ê°¯ìˆ˜ $C_n = 3*2^{n-1}+C_{n-1}$   
+    $C_0 = 2$
 
-* ½Ã°£ º¹Àâµµ :
+* ì‹œê°„ ë³µìž¡ë„ :
   * $O(n)$
 <br></br>
 
 # Learning
-* `iterator +1 -3 +2`¿Í `iterator +(1-3+2)` ¿¬»êÀÌ ´Ù¸£´Ù ÀüÀÚÀÇ °æ¿ì   
-iterator +1 => iterator -3 => iterator +2 ¼øÀ¸·Î ¿¬»êµÇ¾î +1 ¼ø°£¿¡ end¸¦ ³Ñ¾î°¡°Å³ª -3 ¼ø°£¿¡ beginÀ» ³Ñ¾î°¥ ¼ö ÀÖ´Ù.
-µû¶ó¼­ ÈÄÀÚ°¡ ´õ ¾ÈÀüÇÏ°í ¿Ã¹Ù¸¥ ¹æ¹ýÀÌ´Ù.
+* `iterator +1 -3 +2`ì™€ `iterator +(1-3+2)` ì—°ì‚°ì´ ë‹¤ë¥´ë‹¤ ì „ìžì˜ ê²½ìš°   
+iterator +1 => iterator -3 => iterator +2 ìˆœìœ¼ë¡œ ì—°ì‚°ë˜ì–´ +1 ìˆœê°„ì— endë¥¼ ë„˜ì–´ê°€ê±°ë‚˜ -3 ìˆœê°„ì— beginì„ ë„˜ì–´ê°ˆ ìˆ˜ ìžˆë‹¤.
+ë”°ë¼ì„œ í›„ìžê°€ ë” ì•ˆì „í•˜ê³  ì˜¬ë°”ë¥¸ ë°©ë²•ì´ë‹¤.
