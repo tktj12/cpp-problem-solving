@@ -1,7 +1,7 @@
 # Problem
 * https://www.acmicpc.net/problem/11444
 * n번째 피보나치 수 구하기
-* 난이도 : 상
+* 난이도 : 골드2
 
 # Solution
 
