@@ -1,19 +1,19 @@
 # Problem
 * https://www.acmicpc.net/problem/1011
-* xºÎÅÍ y±îÁö ±ÔÄ¢¿¡ ¸Â°Ô °¡Àå »¡¸® ÀÌµ¿ÇÏ´Â °æ¿ì ±¸ÇÏ±â
-* ³­ÀÌµµ : °ñµå5
+* xë¶€í„° yê¹Œì§€ ê·œì¹™ì— ë§žê²Œ ê°€ìž¥ ë¹¨ë¦¬ ì´ë™í•˜ëŠ” ê²½ìš° êµ¬í•˜ê¸°
+* ë‚œì´ë„ : ê³¨ë“œ5
 
 # Solution
 
-### ¹æ¹ý 1 : ÀÌºÐ Å½»ö
-* Ç®ÀÌ
-  * °¡´ÉÇÑ °æ¿ì¸¦ »ý°¢ÇØºÃÀ» ¶§ ¿ìÁÖ¼±ÀÇ ÀåÄ¡¸¦ ÃÖ¼Ò·Î ÀÛµ¿ÇÏ´Â ÀÌµ¿ °Å¸®´Â   
-1 2 3 ... n-1 n n-1 ... 2 1 ÀÇ Çü½ÄÀ¸·Î ¸¸µé ¼ö ÀÖ´Ù.
-  * ÀÌ ¶§ ÃÖ´ñ°ª $n$, ÀÌµ¿°Å¸® $distance$¿¡ ´ëÇØ $n^2 \le distance < n^2+2n+1$À» ¸¸Á·ÇÑ´Ù.
-  * ¶ÇÇÑ $n^2 = distance$ ÀÏ °æ¿ì ÀåÄ¡°¡ $2n-1$¹ø,   
-$n^2 < distance \le n^2+n$ÀÏ °æ¿ì $2n$¹ø,   
-$n^2+n < distance \le n^2+2n$ÀÏ °æ¿ì $2n+1$¹ø ÀÛµ¿ÇÑ´Ù.
+### ë°©ë²• 1 : ì´ë¶„ íƒìƒ‰
+* í’€ì´
+  * ê°€ëŠ¥í•œ ê²½ìš°ë¥¼ ìƒê°í•´ë´¤ì„ ë•Œ ìš°ì£¼ì„ ì˜ ìž¥ì¹˜ë¥¼ ìµœì†Œë¡œ ìž‘ë™í•˜ëŠ” ì´ë™ ê±°ë¦¬ëŠ”   
+$1, 2, 3, ..., n-1, n, n-1, ..., 2, 1$ ì˜ í˜•ì‹ìœ¼ë¡œ ë§Œë“¤ ìˆ˜ ìžˆë‹¤.
+  * ì´ ë•Œ ìµœëŒ“ê°’ $n$, ì´ë™ê±°ë¦¬ $distance$ì— ëŒ€í•´ $n^2 \le distance < n^2+2n+1$ì„ ë§Œì¡±í•œë‹¤.
+  * ë˜í•œ $n^2 = distance$ ì¼ ê²½ìš° ìž¥ì¹˜ê°€ $2n-1$ë²ˆ,   
+$n^2 < distance \le n^2+n$ì¼ ê²½ìš° $2n$ë²ˆ,   
+$n^2+n < distance \le n^2+2n$ì¼ ê²½ìš° $2n+1$ë²ˆ ìž‘ë™í•œë‹¤.
 
-* ½Ã°£ º¹Àâµµ :
+* ì‹œê°„ ë³µìž¡ë„ :
   * $O(\log n)$
 <br></br>
