@@ -1,22 +1,45 @@
 # Problem
 * https://www.acmicpc.net/problem/11444
-* n¹øÂ° ÇÇº¸³ªÄ¡ ¼ö ±¸ÇÏ±â
-* ³­ÀÌµµ : »ó
+* në²ˆì§¸ í”¼ë³´ë‚˜ì¹˜ ìˆ˜ êµ¬í•˜ê¸°
+* ë‚œì´ë„ : ìƒ
 
 # Solution
 
-### ¹æ¹ı 1 : ºĞÇÒ Á¤º¹
-* Ç®ÀÌ
-  * $$C_i =  \begin{pmatrix} fib(i-1) \\ fib(i) \end{pmatrix}$$   
-¶ó°í ÇÒ ¶§ ¾Æ·¡ ½ÄÀÌ ¼º¸³ÇÑ´Ù   
-$$C_{i+1} = \begin{Bmatrix} fib(i) \\ fib(i+1) \end{Bmatrix} = \begin{Bmatrix} fib(i) \\ fib(i-1) & fib(i)\end{Bmatrix} = \begin{Bmatrix} C_{i,1} \\ C_{i,0} & C_{i,1}\end{Bmatrix} = \begin{Bmatrix} C_{i,1} \\ C_{i,0} & C_{i,1}\end{Bmatrix} = \begin{Bmatrix} 0 & 1 \\ 1 & 1\end{Bmatrix} C_i $$   
-µû¶ó¼­ ¾Æ·¡°¡ ¼º¸³ÇÑ´Ù.   
-$$&\begin{Bmatrix} 0 & 1 \\ 1 & 1 \end{Bmatrix} = W$$   
-$C_n=W*C_{n-1}=W*W*C_{n-2}=...=W^{n-1}*C_1$   
-$$C_n= \begin{Bmatrix} fib(n-1) \\ fib(n) \end{Bmatrix} = W^{n-1}*C_1 = W^{n-1} * \begin{Bmatrix} 0 \\ 1 \end{Bmatrix} = \begin{Bmatrix} W^{n-1}_{0,1} \\ W^{n-1}_{1,1} \end{Bmatrix}$$   
-$fib(n) = W^{n-1}_{1,1}$
-  * µû¶ó¼­ $W^{n-1}$¿¡ ´ëÇØ ºĞÇÒ Á¤º¹À» »ç¿ëÇÑ ºü¸¥ Çà·Ä°öÀ» »ç¿ëÇÒ ¼ö ÀÖ´Ù.
+### ë°©ë²• 1 : ë¶„í•  ì •ë³µ
+* í’€ì´
 
-* ½Ã°£ º¹Àâµµ :
-  * $O(\log_{n})$
+$$fib(i)=fib(i-1)+fib(i-2)$$   
+
+$$C_i=\begin{Bmatrix} fib(i-1) \\ 
+fib(i) \end{Bmatrix}$$   
+
+ìœ„ì™€ ê°™ì´ ì •ì˜í•  ë•Œ ì•„ë˜ ì‹ì´ ì„±ë¦½í•œë‹¤   
+
+$$C_{i+1} = \begin{Bmatrix} fib(i) \\ 
+fib(i+1) \end{Bmatrix} = \begin{Bmatrix} fib(i) \\ 
+fib(i-1) + fib(i)\end{Bmatrix} = \begin{Bmatrix} C_{i,1} \\ 
+C_{i,0} + C_{i,1}\end{Bmatrix} = \begin{Bmatrix} 0 & 1 \\ 
+1 & 1\end{Bmatrix} C_i $$   
+
+&nbsp;   
+ë”°ë¼ì„œ ì•„ë˜ê°€ ì„±ë¦½í•œë‹¤.   
+
+
+$$\begin{Bmatrix} 0 & 1 \\ 
+1 & 1 \end{Bmatrix} = W$$   
+
+$$C_n=W* C_{n-1}=W* W*C_{n-2}=...=W^{n-1}*C_1$$
+
+$$= W^{n-1} *\begin{Bmatrix} 0 \\ 
+1 \end{Bmatrix} = \begin{Bmatrix} W^{n-1}_ {1,0} \\ 
+W^{n-1}_{1,1} \end{Bmatrix} = \begin{Bmatrix} fib(n-1) \\ 
+fib(n) \end{Bmatrix}$$   
+
+&nbsp;   
+$$\therefore fib(n) = W^{n-1}_{1,1}$$
+&nbsp;   
+ë¶„í•  ì •ë³µì„ ì‚¬ìš©í•œ ë¹ ë¥¸ í–‰ë ¬ê³±ì„ êµ¬í˜„í•˜ì—¬ $W^{n-1}$ë¥¼ êµ¬í•œë‹¤.
+
+* ì‹œê°„ ë³µì¡ë„ :
+  * $O(\log n)$
 <br></br>
