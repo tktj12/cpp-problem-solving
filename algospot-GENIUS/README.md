@@ -1,37 +1,37 @@
 # Problem
 * https://algospot.com/judge/problem/read/GENIUS
-* ¼­·Î ´Ù¸¥ Àç»ý½Ã°£, ´Ù¸¥ È®·üÀ» °¡Áö°í ÀÖ´Â ³ë·¡ Áß Æ¯Á¤ ³ë·¡°¡ ¾î´À ½ÃÁ¡ Àç»ýµÇ°í ÀÖÀ» È®·ü ±¸ÇÏ±â
-* ³­ÀÌµµ : »ó»ó»ó
+* ì„œë¡œ ë‹¤ë¥¸ ìž¬ìƒì‹œê°„, ë‹¤ë¥¸ í™•ë¥ ì„ ê°€ì§€ê³  ìžˆëŠ” ë…¸ëž˜ ì¤‘ íŠ¹ì • ë…¸ëž˜ê°€ ì–´ëŠ ì‹œì  ìž¬ìƒë˜ê³  ìžˆì„ í™•ë¥  êµ¬í•˜ê¸°
+* ë‚œì´ë„ : ìƒìƒìƒ
 
 # Solution
-* KÀÇ ÃÖ´ñ°ªÀÌ ³Ê¹« Å©±â ¶§¹®¿¡ Àç±Í ÇÔ¼ö¸¦ »ç¿ëÇÏ´Â µ¿Àû °èÈ¹¹ýÀº ÇÒ ¼ö ¾ø´Ù.
+* Kì˜ ìµœëŒ“ê°’ì´ ë„ˆë¬´ í¬ê¸° ë•Œë¬¸ì— ìž¬ê·€ í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ëŠ” ë™ì  ê³„íšë²•ì€ í•  ìˆ˜ ì—†ë‹¤.
 
-### ¹æ¹ý 1 : ¹Ýº¹Àû µ¿Àû °èÈ¹¹ý
-* Ç®ÀÌ
-  * $chance(remain, idx, i)$ : ÇöÀç Àç»ýµÇ°í ÀÖ´Â °îÀÌ $idx$¹ø °îÀÏ ¶§ $remain$ºÐ ÈÄ¿¡ $i$¹ø °îÀÌ Àç»ýµÇ°í ÀÖÀ» È®·ü
+### ë°©ë²• 1 : ë°˜ë³µì  ë™ì  ê³„íšë²•
+* í’€ì´
+  * $chance(remain, idx, i)$ : í˜„ìž¬ ìž¬ìƒë˜ê³  ìžˆëŠ” ê³¡ì´ $idx$ë²ˆ ê³¡ì¼ ë•Œ $remain$ë¶„ í›„ì— $i$ë²ˆ ê³¡ì´ ìž¬ìƒë˜ê³  ìžˆì„ í™•ë¥ 
 
-* ½Ã°£ º¹Àâµµ :
+* ì‹œê°„ ë³µìž¡ë„ :
   * $O(N^2KM)$
 <br></br>
 
-### ¹æ¹ý 2 : ¹Ýº¹Àû µ¿Àû °èÈ¹¹ý
-* Ç®ÀÌ
-  * $start(time, song)$ : Àç»ýÀ» ½ÃÀÛÇÑÁö $time$ºÐ ÈÄ¿¡ $song$¹ø ³ë·¡°¡ Àç»ýÀ» ½ÃÀÛÇÒ È®·ü
-  * $prev$ : $song$ Àü¿¡ Àç»ýµÈ °î, $L(i)$ : ³ë·¡ $i$ÀÇ Àç»ý½Ã°£.
+### ë°©ë²• 2 : ë°˜ë³µì  ë™ì  ê³„íšë²• (ì¢…ë§Œë¶ í’€ì´)
+* í’€ì´
+  * $start(time, song)$ : ìž¬ìƒì„ ì‹œìž‘í•œì§€ $time$ë¶„ í›„ì— $song$ë²ˆ ë…¸ëž˜ê°€ ìž¬ìƒì„ ì‹œìž‘í•  í™•ë¥ 
+  * $prev$ : $song$ ì „ì— ìž¬ìƒëœ ê³¡, $L(i)$ : ë…¸ëž˜ $i$ì˜ ìž¬ìƒì‹œê°„.
   * $start(time, song) = $
 
 $$\sum_{prev} start(time-L(prev), prev)$$
 
 
-* ½Ã°£ º¹Àâµµ :
+* ì‹œê°„ ë³µìž¡ë„ :
   * $O(N^2K)$
 <br></br>
 
-### ¹æ¹ý 3 : ºÐÇÒ Á¤º¹, Çà·Ä °ÅµìÁ¦°ö
-* K°ªÀÌ ³Ê¹« Å©±â ¶§¹®¿¡ K¿¡ Å©°Ô ¿µÇâÀ» ¹ÞÁö ¾Ê´Â ¾Ë°í¸®ÁòÀ» »ç¿ëÇØ¾ß ÇÑ´Ù.
-* Ç®ÀÌ
-  * ¹æ¹ý 2¿¡¼­ Á¤ÀÇÇÑ $start$ÇÔ¼ö´Â ÀÌÀü °ªµéÀÇ ¼±Çü °áÇÕÀ¸·Î ¸¸µé¾îÁø´Ù.
-  * ±×·¯¹Ç·Î $C_{time}$À» ´ÙÀ½°ú °°ÀÌ Á¤ÀÇÇÏ¸é È®·ü $T$¸¦ ÀÌ¿ëÇØ $C_{time+1} = W*C_{time}$¸¦ ¸¸Á·ÇÏ´Â °¡ÁßÄ¡ Çà·Ä $W$ ¶ÇÇÑ °è»êÇÒ ¼ö ÀÖ´Ù.
+### ë°©ë²• 3 : ë¶„í•  ì •ë³µ, í–‰ë ¬ ê±°ë“­ì œê³± (ì¢…ë§Œë¶ í’€ì´)
+* Kê°’ì´ ë„ˆë¬´ í¬ê¸° ë•Œë¬¸ì— Kì— í¬ê²Œ ì˜í–¥ì„ ë°›ì§€ ì•ŠëŠ” ì•Œê³ ë¦¬ì¦˜ì„ ì‚¬ìš©í•´ì•¼ í•œë‹¤.
+* í’€ì´
+  * ë°©ë²• 2ì—ì„œ ì •ì˜í•œ $start$í•¨ìˆ˜ëŠ” ì´ì „ ê°’ë“¤ì˜ ì„ í˜• ê²°í•©ìœ¼ë¡œ ë§Œë“¤ì–´ì§„ë‹¤.
+  * ê·¸ëŸ¬ë¯€ë¡œ $C_{time}$ì„ ë‹¤ìŒê³¼ ê°™ì´ ì •ì˜í•˜ë©´ í™•ë¥  $T$ë¥¼ ì´ìš©í•´ $C_{time+1} = W*C_{time}$ë¥¼ ë§Œì¡±í•˜ëŠ” ê°€ì¤‘ì¹˜ í–‰ë ¬ $W$ ë˜í•œ ê³„ì‚°í•  ìˆ˜ ìžˆë‹¤.
 
 $$\begin{bmatrix} start(time-3, 0) \\ 
 \vdots \\ 
@@ -46,10 +46,10 @@ start(time, 0) \\
 \vdots \\ 
 start(time, n-1) \end{bmatrix}$$
 
-  * µû¶ó¼­ $C_K = W^K * C_0$
-  * ºÐÇÒ Á¤º¹À» »ç¿ëÇÑ ºü¸¥ °ÅµìÁ¦°öÀ» ÅëÇØ ´õ ºü¸¥ ½Ã°£¿¡ ¹®Á¦¸¦ ÇØ°áÇÒ ¼ö ÀÖ´Ù.
+  * ë”°ë¼ì„œ $C_K = W^K * C_0$
+  * ë¶„í•  ì •ë³µì„ ì‚¬ìš©í•œ ë¹ ë¥¸ ê±°ë“­ì œê³±ì„ í†µí•´ ë” ë¹ ë¥¸ ì‹œê°„ì— ë¬¸ì œë¥¼ í•´ê²°í•  ìˆ˜ ìžˆë‹¤.
 
-* ½Ã°£ º¹Àâµµ :
+* ì‹œê°„ ë³µìž¡ë„ :
   * $O((NL)^3 \log K)$
 <br></br>
 
