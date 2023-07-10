@@ -23,6 +23,7 @@ int main()
 		vector<int> result;
 		FindAnswer(n, m - 1, k, result);
 
+
 		int cnt = n + m;
 		for (int i = result.size() - 1; i >= 0; --i) {
 			for (int j = 0; j < result[i]; ++j) {
@@ -46,7 +47,7 @@ int Morse(int front_dahs, int dits)
 	if (dits == -1) return ret = 1;
 
 	for (int i = 0; i <= front_dahs; ++i)
-		ret += Morse(i, dits - 1);
+		ret = min(1000000100, ret+ Morse(i, dits - 1));
 
 	return ret;
 }
