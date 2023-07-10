@@ -1,5 +1,5 @@
 # Problem
-* https://algospot.com/judge/problem/read/NUMB3ERS
+* https://algospot.com/judge/problem/read/NUMB3RS
 * 경로가 있는 노드들에서 d일 뒤에 특정 노드에 있을 확률
 * 난이도 : 하
 

@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algospot-SUSHI\solution2.cpp">
+    <ClCompile Include="algospot-GENIUS\solution3.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

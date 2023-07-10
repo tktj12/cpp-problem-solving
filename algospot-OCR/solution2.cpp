@@ -2,6 +2,8 @@
 #include <vector>
 #include <map>
 #include <cstring>
+#include <cfloat>
+#include <cmath>
 using namespace std;
 double DP(int, int);
 void FindAnswer(int, int, vector<int>&);
@@ -54,16 +56,16 @@ double DP(int before, int idx)
 {
 	if (idx == N) return 1.;
 	double& ret = cache[before][idx];
-	if (!_isnan(ret)) return ret;
+	if (!isnan(ret)) return ret;
 	
-	ret = -INFINITY;
+	ret = -1e+200;
 	int& choose = choice[before][idx];
 	int cur_word = find_word[sentence[idx]];
 	for (int i = 1; i <= M; ++i) {
 		double pa = after[before][i];
 		double pb = alt[i][cur_word];
 		
-		if (pa + pb == -INFINITY)
+		if (pa + pb <= -1e+200)
 			continue;
 		else if (pa * pb == 0.) {
 			choose = i;

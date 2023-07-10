@@ -20,7 +20,7 @@ public:
 
 vector<Sushi> sushis;
 const int CACHE_SZ = 201;
-int cache[CACHE_SZ];
+int cache[21][CACHE_SZ];
 int main()
 {
 	cin.tie(nullptr);
@@ -42,23 +42,22 @@ int main()
 			sushis[i].price /= 100;
 			sushis[i].value = (double)sushis[i].prefer / sushis[i].price;
 		}
-		sort(sushis.begin(), sushis.end(), greater<>());
-		for(int i=0;i<sushis.size();++i)
-			for(int j=i+1;j<sushis.size();++j)
-				if (sushis[j].price > sushis[i].price) {
-					sushis.erase(sushis.begin() + j);
-					--j;
+
+		sushis.insert(sushis.begin(), Sushi());
+		for (int budget = 1; budget <= m; ++budget) {
+			for (int i = 1; i < sushis.size(); ++i) {
+				int cand1 = cache[i - 1][budget % CACHE_SZ];
+				if (budget == 3821 || sushis.size() > 3) {
+					int a = 1;
 				}
-
-		int ans = 0;
-		for (int budget = 1; budget <= m; ++budget)
-			for (int i = 0; i < sushis.size(); ++i) {
+				int cand2 = 0;
 				if (budget >= sushis[i].price)
-					ans = max(ans, cache[(budget - sushis[i].price) % CACHE_SZ] + sushis[i].prefer);
-				cache[budget % CACHE_SZ] = ans;
+					cand2 = cache[i][(budget - sushis[i].price) % CACHE_SZ] + sushis[i].prefer;
+				cache[i][budget % CACHE_SZ] = max(cand1, cand2);
 			}
+		}
 
-		cout << ans << '\n';
+		cout << cache[sushis.size() - 1][m % CACHE_SZ] << '\n';
 	}
 	return 0;
 }
