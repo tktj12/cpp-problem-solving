@@ -56,21 +56,21 @@ double DP(int before, int idx)
 {
 	if (idx == N) return 1.;
 	double& ret = cache[before][idx];
-	if (!isnan(ret)) return ret;
+	if (!std::isnan(ret)) return ret;
 	
-	ret = -1e+200;
+	ret = -INFINITY;
 	int& choose = choice[before][idx];
 	int cur_word = find_word[sentence[idx]];
 	for (int i = 1; i <= M; ++i) {
 		double pa = after[before][i];
 		double pb = alt[i][cur_word];
 		
-		if (pa + pb <= -1e+200)
+		if (pa + pb == -INFINITY)
 			continue;
-		else if (pa * pb == 0.) {
+		/*else if (pa == 0. || pb == 0.) {
 			choose = i;
 			return ret = DP(i, idx + 1);
-		}
+		}*/
 		else {
 			double cand = pa + pb + DP(i, idx + 1);
 			if (cand > ret) {
