@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="algospot-ARCTIC\solution1.cpp">
+    <ClCompile Include="algospot-CANADATRIP\solution1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
