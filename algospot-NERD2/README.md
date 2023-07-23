@@ -1,21 +1,20 @@
 # Problem
 * https://algospot.com/judge/problem/read/NERD2
-* Ç¬ ¹®Á¦ ¼ö, ¶ó¸é ±×¸© ¼ö·Î ÆÇº°ÇÏ´Â ³Êµå
-* ³­ÀÌµµ : Áß
+* í‘¼ ë¬¸ì œ ìˆ˜, ë¼ë©´ ê·¸ë¦‡ ìˆ˜ë¡œ íŒë³„í•˜ëŠ” ë„ˆë“œ
+* ë‚œì´ë„ : ì¤‘
 
 # Solution
 
-### ¹æ¹ý 1 : ±ÕÇü ÀÌÁø Æ®¸® (STL set, red-black tree)
-* Ç®ÀÌ
-  * ±ÕÇü ÀÌÁø Æ®¸® $nerd$¸¦ »ç¶÷À» Ãß°¡ÇÒ ¶§¸¶´Ù Ç¬ ¹®Á¦ ¼ö $p$¸¦ ±âÁØÀ¸·Î Á¤·ÄÇØµÐ´Ù.
-  * ÇöÀç Âü°¡ ½ÅÃ»À» »ç¶÷À» $i$¶ó°í ÇßÀ» ¶§ $i$°¡ nerd¿¡ µé¾î°¡±â À§ÇØ¼­´Â $p_i<p_b$¸¦ °¡Àå Å« ÀÛÀº °ªÀ» °®°íÀÖ´Â 
-$nerd$ÀÇ ¿ø¼Ò $b$¿Í $q_b<q_i$¸¦ ¸¸Á·ÇØ¾ß ÇÑ´Ù.   
-  * $nerd$¿¡ $i$¸¦ ³Ö¾úÀ» ¶§ $O(\log n) ½Ã°£ ¾È¿¡ $nerd_{i+1}$¸¦ ¾Ë ¼ö ÀÖ´Ù.
-  * $i$°¡ $nerd$¿¡ µé¾î°¥ ¼ö ÀÖ´Â °æ¿ì ´õ ÀÌ»ó $nerd$¿¡ ÀÖÀ» ¼ö ¾ø´Â »ç¶÷µéÀÌ ÀÖÀ» ¼ö ÀÖ´Ù.   
-$nerd$´Â Á¤·ÄµÇ¾î ÀÖ´Ù. µû¶ó¼­ $nerd_{i-1}$ºÎÅÍ Á¶°ÇÀ» ¸¸Á·ÇÏ´Â ¿ø¼Ò¸¦ ¹ß°ßÇÒ ¶§ ±îÁö Á¶°ÇÀ» ¸¸Á·ÇÏÁö ¾Ê´Â 
-¿ø¼ÒµéÀ» ¸ðµÎ »èÁ¦ÇÑ´Ù.
-$nerd_i$
+### ë°©ë²• 1 : ê· í˜• ì´ì§„ íŠ¸ë¦¬ (STL set, red-black tree)
+* í’€ì´
+  * ê· í˜• ì´ì§„ íŠ¸ë¦¬ $nerd$ë¥¼ ì‚¬ëžŒì„ ì¶”ê°€í•  ë•Œë§ˆë‹¤ í‘¼ ë¬¸ì œ ìˆ˜ $P$ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì •ë ¬í•´ë‘”ë‹¤.
+  * í˜„ìž¬ ì°¸ê°€ ì‹ ì²­í•œ ì‚¬ëžŒì„ $i$ë¼ê³  í–ˆì„ ë•Œ $i$ê°€ $nerd$ì— ë“¤ì–´ê°€ê¸° ìœ„í•´ì„œëŠ” $P_i < P_b$ë¥¼ ë§Œì¡±í•˜ëŠ” ê°€ìž¥ ìž‘ì€ ê°’ì„ ê°–ê³ ìžˆëŠ” 
+$nerd$ì˜ ì›ì†Œ $b$ì™€ $Q_b < Q_i$ë¥¼ ë§Œì¡±í•´ì•¼ í•œë‹¤.   
+  * $nerd$ì— $i$ë¥¼ ë„£ì—ˆì„ ë•Œ $O(\log n)$ ì‹œê°„ ì•ˆì— $nerd_{i+1}$ë¥¼ ì•Œ ìˆ˜ ìžˆë‹¤.
+  * $i$ê°€ $nerd$ì— ë“¤ì–´ê°€ëŠ” ê²½ìš° $nerd$ì—ì„œ ë¹ ì ¸ì•¼ í•˜ëŠ” ì‚¬ëžŒë“¤ì´ ìžˆì„ ìˆ˜ ìžˆë‹¤.   
+$nerd$ëŠ” ì •ë ¬ë˜ì–´ ìžˆë‹¤. ë”°ë¼ì„œ $nerd_{i-1}$ë¶€í„° ì¡°ê±´ì„ ë§Œì¡±í•˜ëŠ” ì›ì†Œë¥¼ ë°œê²¬í•  ë•Œ ê¹Œì§€ ì¡°ê±´ì„ ë§Œì¡±í•˜ì§€ ì•ŠëŠ” 
+ì›ì†Œë“¤ì„ ëª¨ë‘ ì‚­ì œí•œë‹¤.
 
-* ½Ã°£ º¹Àâµµ :
+* ì‹œê°„ ë³µìž¡ë„ :
   * $O(n\log n)$
 <br></br>
