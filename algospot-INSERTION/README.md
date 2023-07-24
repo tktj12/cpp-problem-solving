@@ -1,33 +1,35 @@
 # Problem
 * https://algospot.com/judge/problem/read/INSERTION
-* »ðÀÔ Á¤·ÄÇÏ±â Àü ¹è¿­ÀÇ ¿ø¼ÒµéÀÌ ¿ÞÂÊÀ¸·Î ÀÌµ¿ÇÑ °Å¸®°¡ ÁÖ¾îÁú ¶§ ¿ø·¡ ¹è¿­À» Ã£¾Æ³»±â
-* ³­ÀÌµµ : Áß
+* ì‚½ìž… ì •ë ¬í•˜ê¸° ì „ ë°°ì—´ì˜ ì›ì†Œë“¤ì´ ì™¼ìª½ìœ¼ë¡œ ì´ë™í•œ ê±°ë¦¬ê°€ ì£¼ì–´ì§ˆ ë•Œ ì›ëž˜ ë°°ì—´ì„ ì°¾ì•„ë‚´ê¸°
+* ë‚œì´ë„ : ì¤‘
 
 # Solution
 
-### ¹æ¹ý 1 : ÀÌÁø Å½»ö Æ®¸®, Æ®¸³(treap)
-* Ç®ÀÌ
-  * ÀÔ·ÂÀ¸·Î ÁÖ¾îÁø ¹è¿­ $A[]$´Â ¿ø·¡ ¹è¿­ÀÇ Á¤º¸¸¦ ³ªÅ¸³½´Ù. 
-$A_i$´Â $i$¹ø ¼ö°¡ »ðÀÔ Á¤·Ä ¶§ ¿ÞÂÊÀ¸·Î ¾ó¸¶³ª ÀÌµ¿Çß´ÂÁöÀÌ´Ù. 
-µû¶ó¼­ $A_0$ ºÎÅÍ $A_{n-1}$±îÁö ½ÇÁ¦·Î »ðÀÔ Á¤·ÄÀ» ½Ã¹Ä·¹ÀÌ¼Ç ÇÏ¿© Á¤·ÄµÈ ¹è¿­ÀÇ ÀÎµ¦½ºº° À§Ä¡¸¦ ±¸ÇÑ´Ù.
-  * ½ÇÁ¦·Î ÀÏÀÏÀÌ ¿ø¼ÒµéÀ» swapÇÏ¸é¼­ »ðÀÔÇÏ¸é ¿ø¼Ò ÇÏ³ª´ç $O(n^2)$½Ã°£ÀÌ ¼Ò¿äµÇ¹Ç·Î 
-treap ÀÚ·á±¸Á¶¸¦ ÀÌ¿ëÇÏ¿© ¿ø¼ÒÀÇ »ðÀÔÀ» $O(\log n)$ ½Ã°£ ¾È¿¡ ÇÑ´Ù.
-  * ÀÌ·¸°Ô Á¤·ÄµÈ ¹è¿­ÀÇ ¿ø¼ÒµéÀÇ ¿ø·¡ ÀÎµ¦½º¸¦ ±¸ÇÏ°í ¿ø·¡ ¹è¿­ÀÇ ¼ø¼­´ë·Î Ãâ·ÂÇÑ´Ù.
+### ë°©ë²• 1 : ì´ì§„ íƒìƒ‰ íŠ¸ë¦¬, íŠ¸ë¦½(treap)
+* í’€ì´
+  * ìž…ë ¥ìœ¼ë¡œ ì£¼ì–´ì§„ ë°°ì—´ $A[]$ëŠ” ì›ëž˜ ë°°ì—´ì˜ ì •ë³´ë¥¼ ë‚˜íƒ€ë‚¸ë‹¤. 
+$A_i$ëŠ” $i$ë²ˆ ìˆ˜ê°€ ì‚½ìž… ì •ë ¬ ë•Œ ì™¼ìª½ìœ¼ë¡œ ì–¼ë§ˆë‚˜ ì´ë™í–ˆëŠ”ì§€ì´ë‹¤. 
+ë”°ë¼ì„œ $A_0$ ë¶€í„° $A_{n-1}$ê¹Œì§€ ì‹¤ì œë¡œ ì‚½ìž… ì •ë ¬ì„ ì‹œë®¬ë ˆì´ì…˜ í•˜ì—¬ ì •ë ¬ëœ ë°°ì—´ì˜ ì¸ë±ìŠ¤ë³„ ìœ„ì¹˜ë¥¼ êµ¬í•œë‹¤.
+  * ì‹¤ì œë¡œ ì¼ì¼ì´ ì›ì†Œë“¤ì„ swapí•˜ë©´ì„œ ì‚½ìž…í•˜ë©´ ì›ì†Œ í•˜ë‚˜ë‹¹ $O(n)$ì‹œê°„ì´ ì†Œìš”ë˜ë¯€ë¡œ 
+treap ìžë£Œêµ¬ì¡°ë¥¼ ì´ìš©í•˜ì—¬ ì›ì†Œì˜ ì‚½ìž…ì„ $O(\log n)$ ì‹œê°„ ì•ˆì— í•œë‹¤.
+  * ì´ë ‡ê²Œ ì •ë ¬ëœ ë°°ì—´ì˜ ì›ì†Œë“¤ì˜ ì›ëž˜ ì¸ë±ìŠ¤ë¥¼ êµ¬í•˜ê³  ì›ëž˜ ë°°ì—´ì˜ ìˆœì„œëŒ€ë¡œ ì¶œë ¥í•œë‹¤.
 
-* ½Ã°£ º¹Àâµµ :
+* ì‹œê°„ ë³µìž¡ë„ :
   * $O(n\log n)$
 <br></br>
 
 # Learning
-* int rand() ÇÔ¼ö
-  * <cstdlib> Çì´õ ÆÄÀÏ¿¡ Á¤ÀÇµÇ¾îÀÖ´Ù.
-  * 0 ~ RAND_MAX(32767) Áß ·£´ýÇÑ °ªÀ» ¹ÝÈ¯ÇÑ´Ù.
-  * srand(unsigned int seed) ÇÔ¼ö·Î seed °ªÀ» ¼³Á¤ÇÒ ¼ö ÀÖ´Ù.
+* int rand() í•¨ìˆ˜
+  * `<cstdlib>` í—¤ë” íŒŒì¼ì— ì •ì˜ë˜ì–´ìžˆë‹¤.
+  * 0 ~ RAND_MAX(32767) ì¤‘ ëžœë¤í•œ ê°’ì„ ë°˜í™˜í•œë‹¤.
+  * srand(unsigned int seed) í•¨ìˆ˜ë¡œ seed ê°’ì„ ì„¤ì •í•  ìˆ˜ ìžˆë‹¤.
 
 * unique_ptr
-  * <memory> Çì´õ ÆÄÀÏ¿¡ Á¤ÀÇµÇ¾úÀÖ´Ù.
-  * µ¿Àû ÇÒ´çµÈ °´Ã¼ÀÇ ÁÖ¼Ò¸¦ 'À¯ÀÏÇÏ°Ô' °®À» ¼ö ÀÖ°í µ¿Àû ÇÒ´ç ¸Þ¸ð¸®¸¦ ÀÚµ¿À¸·Î ÇØÁ¦ÇØÁÖ´Â Å¬·¡½ºÀÌ´Ù(Ãß»ó ÀÚ·á).
-  * µû¶ó¼­ delete ÇÒ ÇÊ¿ä°¡ ¾øÀÌ °´Ã¼°¡ ¼Ò¸êµÉ ¶§ °¡¸®Å°´Â °´Ã¼ ¶ÇÇÑ ¼Ò¸êµÈ´Ù.
-  * make_unique() ÇÔ¼ö·Î unique_ptr °´Ã¼¸¦ ¾ÈÀüÇÏ°Ô »ý¼ºÇÒ ¼ö ÀÖ´Ù.
-  * unique_ptr °´Ã¼¿¡¼­ ´Ù¸¥ °´Ã¼·Î °ªÀ» ¿Å±â·Á¸é move() ÇÔ¼ö¸¦ »ç¿ëÇØ¼­ ¿Å±æ ¼ö ÀÖ´Ù. 
-¿Å°ÜÁö¸é¼­ ¿ø·¡ °´Ã¼´Â ¼ÒÀ¯¸¦ ÀÒ´Â´Ù.
+  * ìŠ¤ë§ˆíŠ¸ í¬ì¸í„° ì¶”ìƒ ìžë£Œë¥¼ êµ¬í˜„í•œ ê²ƒì´ë‹¤.
+  * `<memory>` í—¤ë” íŒŒì¼ì— ì •ì˜ë˜ì–´ìžˆë‹¤.
+  * ë™ì  í• ë‹¹ëœ ê°ì²´ì˜ ì£¼ì†Œë¥¼ 'ìœ ì¼í•˜ê²Œ' ê°€ì§ˆ ìˆ˜ ìžˆê³  ë™ì  í• ë‹¹ ë©”ëª¨ë¦¬ë¥¼ ìžë™ìœ¼ë¡œ í•´ì œí•´ì£¼ëŠ” í´ëž˜ìŠ¤ì´ë‹¤.
+  * ë”°ë¼ì„œ delete í•  í•„ìš”ê°€ ì—†ì´ ê°ì²´ê°€ ì†Œë©¸ë  ë•Œ ê°€ë¦¬í‚¤ëŠ” ê°ì²´ ë˜í•œ ì†Œë©¸ëœë‹¤.
+  * make_unique() í•¨ìˆ˜ë¡œ unique_ptr ê°ì²´ë¥¼ ì•ˆì „í•˜ê²Œ ìƒì„±í•  ìˆ˜ ìžˆë‹¤.   
+`unique_ptr<type> p = make_unique<type>();`
+  * unique_ptr ê°ì²´ì—ì„œ ë‹¤ë¥¸ ê°ì²´ë¡œ í¬ì¸í„°ë¥¼ ì˜®ê¸°ë ¤ë©´ move() í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•´ì„œ ì˜®ê¸¸ ìˆ˜ ìžˆë‹¤. ì˜®ê²¨ì§€ë©´ì„œ ê¸°ì¡´ ê°ì²´ëŠ” ì†Œìœ ë¥¼ ìžƒëŠ”ë‹¤.   
+ `unique_ptr<type> q = move(p);`
