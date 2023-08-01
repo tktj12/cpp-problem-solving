@@ -4,6 +4,7 @@
 using namespace std;
 
 
+double dp[500][3001];
 int main()
 {
 	cout.precision(10);
@@ -11,31 +12,26 @@ int main()
 	int n, k;
 	cin >> n >> k;
 
-	vector<double> prob_one(3001,0); // i번째 징검다리가 1칸이고 i+1~n번째 징검다리는 모두 3칸일 확률
-	vector<double> prob_two(3001, 0); // i번째 징검다리가 2칸이고 i+1~n번째 징검다리는 모두 3칸일 확률
+	dp[1+1][0] = 1.;
 
-	prob_one[0] = 1.;
-	for (int who = 0; who < k; who++) {
-		vector<double> prob_two_buf(3001, 0);
-		for (int i = 0; i <= n; i++) {
-			double prob_two_now = prob_two[i];
-			double prob_one_now = prob_one[i];
-			prob_one[i] = prob_two[i] / 2;
+	dp[1+1][1] = 1. / 3.;
+	dp[2+1][1] = 1. / 3.;
+	dp[3+1][1] = 1. / 3.;
 
-			for (int j = i+1; j <= n; j++) {
-				prob_two_now /= 3;
-				prob_one_now /= 3;
-				prob_two_buf[j] += prob_two_now + 2*prob_one_now;
-			}
+	for (int j = 1; j <= n; j++) {
+		for (int i = 1; i <= k; i++) {
+			int idx = i + 1;
+			dp[idx][j] = (dp[idx][j-1] + dp[idx - 1][j-1] + dp[idx - 2][j-1]) / 3;
 		}
-		prob_two = prob_two_buf;
 	}
 
-	double ans = 1.;
-	for (int i = 0; i <= n; i++) {
-		ans -= prob_one[i] + prob_two[i];
+	double ans = 0;
+	for (int i = 1; i <= k; i++) {
+		int idx = i + 1;
+		ans += dp[idx][n];
 	}
-	cout << ans << endl;
+
+	cout << ans;
 
 	return 0;
 }
