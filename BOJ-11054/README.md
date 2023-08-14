@@ -1,18 +1,18 @@
 # Problem
 * https://www.acmicpc.net/problem/11054
-* °¡Àå ±ä ¹ÙÀÌÅä´Ð ºÎºÐ ¼ö¿­ ±¸ÇÏ±â
-* ³­ÀÌµµ : °ñµå 4
+* ê°€ìž¥ ê¸´ ë°”ì´í† ë‹‰ ë¶€ë¶„ ìˆ˜ì—´ êµ¬í•˜ê¸°
+* ë‚œì´ë„ : ê³¨ë“œ 4
 
 # Solution
 
-### ¹æ¹ý 1 : LIS ±¸ÇÏ´Â n log n ¾Ë°í¸®Áò
-* Ç®ÀÌ
-  * $right_len[i]$ : ÀüÃ¼ ¼ö¿­ÀÇ ¿ÞÂÊºÎÅÍ ¿À¸¥ÂÊÀ¸·Î i+1¹ø ºÃÀ» ¶§ LISÀÇ ÃÖ´ë ±æÀÌ
-  * $right_top[i]$ : ÀüÃ¼ ¼ö¿­ÀÇ ¿ÞÂÊºÎÅÍ ¿À¸¥ÂÊÀ¸·Î i+1¹ø ºÃÀ» ¶§ LISÀÇ °¡Àå Å« ¼ö
-  * $left_len[i]$ :  ÀüÃ¼ ¼ö¿­ÀÇ ¿À¸¥ÂÊºÎÅÍ ¿ÞÂÊÀ¸·Î i+1¹ø ºÃÀ» ¶§ LISÀÇ ÃÖ´ë ±æÀÌ
-  * $left_top[i]$ :  ÀüÃ¼ ¼ö¿­ÀÇ ¿À¸¥ÂÊºÎÅÍ ¿ÞÁ·À¸·Î i+1¹ø ºÃÀ» ¶§ LISÀÇ °¡Àå Å« ¼ö
-  * ÀÌ ³× °¡Áö ¹è¿­À» Ã¤¿ì¸é $O(n)$½Ã°£ ¾È¿¡ ¾î¶² ¼ö¸¦ ±âÁØÀ¸·Î ÇØ¾ß °¡Àå ±ä ¹ÙÀÌÅä´Ð ¼ö¿­À» ¾òÀ» ¼ö ÀÖ´ÂÁö ±¸ÇÒ ¼ö ÀÖ´Ù.
+### ë°©ë²• 1 : LIS êµ¬í•˜ëŠ” n log n ì•Œê³ ë¦¬ì¦˜
+* í’€ì´
+  * $rightLen[i]$ : ì „ì²´ ìˆ˜ì—´ì˜ ì™¼ìª½ë¶€í„° ì˜¤ë¥¸ìª½ìœ¼ë¡œ i+1ë²ˆ ë´¤ì„ ë•Œ LISì˜ ìµœëŒ€ ê¸¸ì´
+  * $rightTop[i]$ : ì „ì²´ ìˆ˜ì—´ì˜ ì™¼ìª½ë¶€í„° ì˜¤ë¥¸ìª½ìœ¼ë¡œ i+1ë²ˆ ë´¤ì„ ë•Œ LISì˜ ê°€ìž¥ í° ìˆ˜
+  * $leftLen[i]$ :  ì „ì²´ ìˆ˜ì—´ì˜ ì˜¤ë¥¸ìª½ë¶€í„° ì™¼ìª½ìœ¼ë¡œ i+1ë²ˆ ë´¤ì„ ë•Œ LISì˜ ìµœëŒ€ ê¸¸ì´
+  * $leftTop[i]$ :  ì „ì²´ ìˆ˜ì—´ì˜ ì˜¤ë¥¸ìª½ë¶€í„° ì™¼ì¡±ìœ¼ë¡œ i+1ë²ˆ ë´¤ì„ ë•Œ LISì˜ ê°€ìž¥ í° ìˆ˜
+  * ì´ ë„¤ ê°€ì§€ ë°°ì—´ì„ ì±„ìš°ë©´ $O(n)$ì‹œê°„ ì•ˆì— ì–´ë–¤ ìˆ˜ë¥¼ ê¸°ì¤€ìœ¼ë¡œ í•´ì•¼ ê°€ìž¥ ê¸´ ë°”ì´í† ë‹‰ ìˆ˜ì—´ì„ ì–»ì„ ìˆ˜ ìžˆëŠ”ì§€ êµ¬í•  ìˆ˜ ìžˆë‹¤.
 
-* ½Ã°£ º¹Àâµµ :
+* ì‹œê°„ ë³µìž¡ë„ :
   * $O(n\log n)$
 <br></br>
