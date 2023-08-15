@@ -32,7 +32,8 @@
 * stable하다는 뜻은 정렬할 때 중복값들도 그 순서가 유지된다는 뜻이다. 즉 1,0,2,0 을 정렬해서 
 0,0,1,2를 얻었다면 앞의 0과 뒤의 0의 순서 유지된다. 반면 quick sort는 unstable하다. 
 이 특성은 의미 없어 보이지만, 객체를 정렬할 때 중복값으로 처리되지만 내부 값은 다른 것을 정렬할 땐 중요한 특성이다.
-
+* 결과적으로 counting sort를 배우게 됐지만, 방법 1이 시간 초과가 났던건 $SuffixComparator$객체에서 $group$을 reference로 받지 
+않아서였다..
 # Review
 `index[--cnt[group[perm[i]+t]]] = i;` ... ?   
 `res[--cnt[group[perm[index[i]]]]] = perm[index[i]];` ... ????

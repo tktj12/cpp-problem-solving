@@ -84,25 +84,6 @@ void ManberMyers(string& str)
 	// return perm;
 }
 
-inline void IntToChar(string& ans, int num)
-{
-	if (num == 0) {
-		ans += '0';
-		ans += '\n';
-		return;
-	}
-
-	stack<char> st;
-	while (num) {
-		st.push(num % 10 + '0');
-		num /= 10;
-	}
-
-	while (!st.empty())
-		ans += st.top(), st.pop();
-	ans += '\n';
-}
-
 int main()
 {
 	cin.tie(nullptr);
@@ -113,12 +94,8 @@ int main()
 	cin >> str;
 	ManberMyers(str);
 
-	int n = str.size();
-	string ans;
-	ans.reserve(10 * n);
-	for (int i = 0; i < n; i++)
-		IntToChar(ans, perm[i]);
-	cout << ans;
+	for (int i : perm)
+		cout << i << '\n';
 
 	return 0;
 }

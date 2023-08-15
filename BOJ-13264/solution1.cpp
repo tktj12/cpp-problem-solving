@@ -1,15 +1,12 @@
-#define _CRT_SECURE_NO_WARNINGS
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <stack>
 using namespace std;
 
 class SuffixComparator {
 public:
 	int t;
-	vector<int> group;
+	vector<int>& group;
 	SuffixComparator(int t, vector<int>& group) : t(t), group(group) {}
 
 	bool operator()(int a, int b) {
@@ -53,46 +50,18 @@ void ManberMyers(string& str)
 	// return perm;
 }
 
-inline void IntToChar(string& ans, int num)
-{
-	if (num == 0) {
-		ans += '0';
-		ans += '\n';
-		return;
-	}
-
-	stack<char> st;
-	while (num) {
-		st.push(num % 10 + '0');
-		num /= 10;
-	}
-
-	while (!st.empty())
-		ans += st.top(), st.pop();
-	ans += '\n';
-}
-
 int main()
 {
 	cin.tie(nullptr);
 	cout.tie(nullptr);
 	ios::sync_with_stdio(false);
 
-	/*if (freopen("C:\\Users\\123au\\cpp-problem-solving\\input.txt", "r", stdin) == nullptr)
-		return 1;
-	if (freopen("C:\\Users\\123au\\cpp-problem-solving\\output.txt", "w", stdout) == nullptr)
-		return 1;*/
-
 	string str;
 	cin >> str;
 	ManberMyers(str);
 
-	int n = str.size();
-	string ans;
-	ans.reserve(10 * n);
-	for (int i = 0; i < n; i++)
-		IntToChar(ans, perm[i]);
-	cout << ans;
+	for (int i : perm)
+		cout << i << '\n';
 
 	return 0;
 }
