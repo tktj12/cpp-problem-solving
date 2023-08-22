@@ -1,19 +1,19 @@
 # Problem
 * https://www.acmicpc.net/problem/13275
-* ºÎºÐ ¹®ÀÚ¿­ Áß °¡Àå ±ä ÆÓ¸°µå·Ò ¹®ÀÚ¿­ Ã£±â
-* ³­ÀÌµµ : ÇÃ·¹Æ¼³Ñ 5
+* ë¶€ë¶„ ë¬¸ìžì—´ ì¤‘ ê°€ìž¥ ê¸´ íŒ°ë¦°ë“œë¡¬ ë¬¸ìžì—´ ì°¾ê¸°
+* ë‚œì´ë„ : í”Œë ˆí‹°ë„˜ 5
 
 # Solution
 
-### ¹æ¹ý 1 : Manacher ¾Ë°í¸®Áò
-* Ç®ÀÌ
-  * Manacher ¾Ë°í¸®ÁòÀº $O(|S|)$½Ã°£ ¾È¿¡ ÆÓ¸°µå·ÒÀÎ ºÎºÐ ¹®ÀÚ¿­µéÀ» ±¸ÇÒ ¼ö ÀÖ´Ù.
-  * NaiveÇÑ Manacher ¾Ë°í¸®ÁòÀº È¦¼ö ÆÓ¸°µå·Ò¸¸ ±¸ÇÒ ¼ö ÀÖ±â ¶§¹®¿¡ ¹®ÀÚ¿­ Áß°£¿¡ '.'À» ³Ö¾î¼­ 
-  ¿øº» ¹®ÀÚ¿­ÀÇ Â¦¼ö ÆÓ¸°µå·Òµµ ±¸ÇÒ ¼ö ÀÖ°Ô ¸¸µé¾ú´Ù.
+### ë°©ë²• 1 : Manacher ì•Œê³ ë¦¬ì¦˜
+* í’€ì´
+  * Manacher ì•Œê³ ë¦¬ì¦˜ì€ $O(|S|)$ì‹œê°„ ì•ˆì— íŒ°ë¦°ë“œë¡¬ì¸ ë¶€ë¶„ ë¬¸ìžì—´ë“¤ì„ êµ¬í•  ìˆ˜ ìžˆë‹¤.
+  * Manacher ì•Œê³ ë¦¬ì¦˜ì€ í™€ìˆ˜ íŒ°ë¦°ë“œë¡¬ë§Œ êµ¬í•  ìˆ˜ ìžˆê¸° ë•Œë¬¸ì— ë¬¸ìžì—´ ì¤‘ê°„ì— '.'ì„ ë„£ì–´ì„œ 
+  ì›ë³¸ ë¬¸ìžì—´ì˜ ì§ìˆ˜ íŒ°ë¦°ë“œë¡¬ë„ êµ¬í•  ìˆ˜ ìžˆê²Œ ë§Œë“¤ì—ˆë‹¤.
 
-* ½Ã°£ º¹Àâµµ :
+* ì‹œê°„ ë³µìž¡ë„ :
   * $O(|S|)$
 <br></br>
 
 # Learning
-* Manacher ¾Ë°í¸®Áò https://ialy1595.github.io/post/manacher/
+* Manacher ì•Œê³ ë¦¬ì¦˜ https://ialy1595.github.io/post/manacher/
