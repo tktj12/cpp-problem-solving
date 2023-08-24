@@ -12,3 +12,6 @@
 * 시간 복잡도 :
   * $O(N^2C)$, $N$ : 앱의 개수, $C$ : cost의 범위
 <br></br>
+
+# Learning
+* 풀이 https://cocoon1787.tistory.com/319
