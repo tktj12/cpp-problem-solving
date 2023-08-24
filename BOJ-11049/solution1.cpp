@@ -11,7 +11,7 @@ int DP(int left, int right) {
 
 	int& ret = cache[left][right];
 	if (ret > 0) return ret;
-	ret = 987654321;
+	ret = 0x7FFFFFFF;
 
 	int tp = M[left][r] * M[right][c];
 	for(int i=left;i<right;i++)
