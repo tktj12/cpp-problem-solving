@@ -1,16 +1,16 @@
 # Problem
 * https://www.acmicpc.net/problem/1208
-* ºÎºĞ¼ö¿­ÀÇ ¿ø¼ÒÀÇ ÇÕÀÌ S°¡ µÇ´Â °æ¿ìÀÇ ¼ö ±¸ÇÏ±â
-* ³­ÀÌµµ : °ñµå 1
+* ë¶€ë¶„ìˆ˜ì—´ì˜ ì›ì†Œì˜ í•©ì´ Sê°€ ë˜ëŠ” ê²½ìš°ì˜ ìˆ˜ êµ¬í•˜ê¸°
+* ë‚œì´ë„ : ê³¨ë“œ 1
 
 # Solution
 
-### ¹æ¹ı 1 : MITM (Meet In The Middle)
-* Ç®ÀÌ
+### ë°©ë²• 1 : MITM (Meet In The Middle)
+* í’€ì´
   * https://velog.io/@flaxinger/ALGO-Meet-In-The-Middle
 
-* ½Ã°£ º¹Àâµµ :
-  * $O(2^{N/2} N)$
+* ì‹œê°„ ë³µì¡ë„ :
+  * $O(2^{\frac{N}{2}} N)$
 <br></br>
 
 # Learning
