@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 const long long MAXK = 1'000'000'000'000'000'010;
@@ -59,11 +58,10 @@ long long GetSum(int lo, int hi, Node* here)
 	return ret = min(ret, MAXK);
 }
 
-Node* segtree_head[100000];
+Node* segtree_root[100000];
 int arr[MAXN+1], lis[MAXN], prv[MAXN+1];
 long long DP[MAXN+1];
 vector<int> history[MAXN];
-vector<long long> psum[MAXN];
 int lis_cnt;
 
 int UnderBound(int n)
@@ -118,7 +116,7 @@ int main()
 		long long sum=1;
 		if(idx>0) {
 			int lo = LowerBound(arr[i], idx - 1);
-			sum = GetSum(lo, history[idx - 1].size() - 1, segtree_head[idx - 1]);
+			sum = GetSum(lo, history[idx - 1].size() - 1, segtree_root[idx - 1]);
 		}
 		DP[arr[i]] = sum;
 
@@ -126,16 +124,16 @@ int main()
 		int sz = history[idx].size() - 1;
 		
 		// 트리 키우기
-		if (segtree_head[idx] == nullptr || segtree_head[idx]->hi < sz) {
+		if (segtree_root[idx] == nullptr || segtree_root[idx]->hi < sz) {
 			Node* new_head = new Node;
 			new_head->lo = 0;
 			if(sz==0) new_head->hi = 0;
 			else new_head->hi = sz * 2 - 1;
 			new_head->mid = (new_head->lo + new_head->hi) / 2;
-			new_head->left = segtree_head[idx];
-			segtree_head[idx] = new_head;
+			new_head->left = segtree_root[idx];
+			segtree_root[idx] = new_head;
 		}
-		InsertST(sz, sum, segtree_head[idx]);
+		InsertST(sz, sum, segtree_root[idx]);
 	}
 
 	vector<int> ans;
