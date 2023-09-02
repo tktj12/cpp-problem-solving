@@ -10,14 +10,16 @@ public:
 	long long sum = 0;
 	int lo, hi, mid;
 	Node* left = nullptr , * right = nullptr;
-};
 
-Node* NewNode(Node* parent, int lo, int hi) {
-	Node* ret = new Node;
-	ret->lo = lo;
-	ret->hi = hi;
-	ret->mid = (ret->lo + ret->hi) / 2;
-	return ret;
+	Node(int l = 0, int h = 0) : lo(l), hi(h) {
+		mid = (lo + hi) / 2;
+	}
+}new_node[4 * MAXN];
+int node_cnt;
+
+inline Node* NewNode(int lo, int hi) {
+	new_node[node_cnt] = Node(lo, hi);
+	return &new_node[node_cnt++];
 }
 
 void InsertST(int idx, long long sum, Node* here)
@@ -29,13 +31,13 @@ void InsertST(int idx, long long sum, Node* here)
 
 	if (here->mid >= idx) {
 		if (!here->left)
-			here->left = NewNode(here, here->lo, here->mid);
+			here->left = NewNode(here->lo, here->mid);
 
 		InsertST(idx, sum, here->left);
 	}
 	else {
 		if (!here->right)
-			here->right = NewNode(here, here->mid+1, here->hi);
+			here->right = NewNode(here->mid+1, here->hi);
 
 		InsertST(idx, sum, here->right);
 	}
@@ -58,7 +60,7 @@ long long GetSum(int lo, int hi, Node* here)
 	return ret = min(ret, MAXK);
 }
 
-Node* segtree_root[100000];
+Node* segtree_root[MAXN];
 int arr[MAXN+1], lis[MAXN], prv[MAXN+1];
 long long DP[MAXN+1];
 vector<int> history[MAXN];
@@ -125,11 +127,11 @@ int main()
 		
 		// 트리 키우기
 		if (segtree_root[idx] == nullptr || segtree_root[idx]->hi < sz) {
-			Node* new_head = new Node;
-			new_head->lo = 0;
-			if(sz==0) new_head->hi = 0;
-			else new_head->hi = sz * 2 - 1;
-			new_head->mid = (new_head->lo + new_head->hi) / 2;
+			int hi;
+			if (sz == 0) hi = 0;
+			else hi = sz * 2 - 1;
+			Node* new_head = NewNode(0, hi);
+
 			new_head->left = segtree_root[idx];
 			segtree_root[idx] = new_head;
 		}
