@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
 const long long MAXK = 1'000'000'001'000'000'010;
@@ -11,62 +10,63 @@ public:
 	long long sum = 0;
 	int lo, hi, mid;
 	Node* left = nullptr, * right = nullptr;
-};
 
-Node* NewNode(Node* parent, int lo, int hi) {
-	Node* ret = new Node;
-	ret->lo = lo;
-	ret->hi = hi;
-	ret->mid = (ret->lo + ret->hi) / 2;
-	return ret;
+	Node(int l = 0, int history = 0) : lo(l), hi(history) {
+		mid = (lo + hi) / 2;
+	}
+}new_node[4 * MAXN];
+int node_cnt;
+
+inline Node* NewNode(int lo, int hi) {
+	new_node[node_cnt] = Node(lo, hi);
+	return &new_node[node_cnt++];
 }
 
-void InsertST(int idx, long long sum, Node* here)
+void InsertST(int idx, long long sum, Node* root)
 {
-	if (here->lo == here->hi) {
-		here->sum = sum;
+	if (root->lo == root->hi) {
+		root->sum = sum;
 		return;
 	}
 
-	if (here->mid >= idx) {
-		if (!here->left)
-			here->left = NewNode(here, here->lo, here->mid);
+	if (root->mid >= idx) {
+		if (!root->left)
+			root->left = NewNode(root->lo, root->mid);
 
-		InsertST(idx, sum, here->left);
+		InsertST(idx, sum, root->left);
 	}
 	else {
-		if (!here->right)
-			here->right = NewNode(here, here->mid + 1, here->hi);
+		if (!root->right)
+			root->right = NewNode(root->mid + 1, root->hi);
 
-		InsertST(idx, sum, here->right);
+		InsertST(idx, sum, root->right);
 	}
 
 	long long ls, rs = 0;
-	ls = here->left->sum;
-	if (here->right) rs = here->right->sum;
+	ls = root->left->sum;
+	if (root->right) rs = root->right->sum;
 
-	here->sum = min(ls + rs, MAXK);
+	root->sum = min(ls + rs, MAXK);
 }
 
-long long GetSum(int lo, int hi, Node* here)
+long long GetSum(int lo, int hi, Node* root)
 {
-	if (lo <= here->lo && here->hi <= hi) return here->sum;
-	else if (here->hi < lo || hi < here->lo) return 0;
+	if (lo <= root->lo && root->hi <= hi) return root->sum;
+	else if (root->hi < lo || hi < root->lo) return 0;
 
-	long long ret = GetSum(lo, hi, here->left);
-	if (here->right) ret += GetSum(lo, hi, here->right);
+	long long ret = GetSum(lo, hi, root->left);
+	if (root->right) ret += GetSum(lo, hi, root->right);
 
 	return ret = min(ret, MAXK);
 }
 
 struct Dat {
-	int first, lo, hi, cnt=1;
-	long long second;
-	Dat(int a, int b, int c, long long d) : first(a), lo(b), hi(c), second(d) {}
+	int lo, hi, num;
+	long long sum;
 };
 
 vector<Dat> history[MAXN];
-Node* segtree_root[100000];
+Node* segtree_root[MAXN];
 int arr[MAXN + 1], lis[MAXN];
 int lis_cnt;
 
@@ -87,38 +87,27 @@ int UnderBound(int n)
 int UpperBound(int n, int idx)
 {
 	int lo = -1, hi = history[idx].size();
-	// history[idx][lo].first <= n < history[idx][hi].first
+	// history[idx][lo].num <= n < history[idx][hi].num
 	while (lo + 1 < hi) {
 		int mid = (lo + hi) / 2;
-		if (n >= history[idx][mid].first)
+		if (n >= history[idx][mid].num)
 			lo = mid;
 		else hi = mid;
 	}
 	return hi;
 }
 
-long long DP(int idx, int lo, int hi)
+int RangeUpperBound(int lo, int hi, int idx, int n)
 {
-	long long ret = 0;
-	if (idx == 0) {
-		for (int i = lo; i <= hi; i++) {
-			history[idx][i].second = 1;
-			ret ++;
-		}
-		return ret;
+	// h[idx][lo].num <= n < h[idx][hi].num
+	while (lo + 1 < hi) {
+		int mid = (lo + hi) / 2;
+		if (n >= history[idx][mid].num)
+			lo = mid;
+		else hi = mid;
 	}
 
-	for (int i = lo; i <= hi; i++) {
-		if (history[idx][i].second == -1) {
-			long long tp = DP(idx - 1, history[idx][i].lo, history[idx][i].hi);
-			if (tp > MAXK / history[idx][i].cnt) history[idx][i].second = MAXK;
-			else history[idx][i].second = tp * history[idx][i].cnt;
-		}
-
-		ret = min(ret + history[idx][i].second, MAXK);
-	}
-
-	return ret;
+	return hi;
 }
 
 int main()
@@ -140,79 +129,70 @@ int main()
 		}
 		else { //arr[i] >= lis[idx]
 			if (lis[idx] == arr[i]) same = true;
-			lis[idx] = arr[i];
+			else lis[idx] = arr[i];
 		}
 
 		int hi = 0;
 		if (idx > 0) hi = history[idx - 1].size() - 1;
 
-		//long long sum = 1;
-		long long sum = -1;
-		int lo=0;
+		long long sum = 1;
+		int lo = 0;
 		if (idx > 0) {
+			lo = UpperBound(arr[i], idx - 1);
+			sum = GetSum(lo, history[idx - 1].size() - 1, segtree_root[idx - 1]);
+
 			if (same) lo = history[idx].back().hi + 1;
-			else lo = UpperBound(arr[i], idx - 1);
-			//sum = GetSum(lo, hi, segtree_root[idx - 1]);
 		}
 
-		history[idx].push_back({ arr[i], lo, hi, sum });
-		//int sz = history[idx].size() - 1;
+		history[idx].push_back({ lo,hi,arr[i],sum });
+		int sz = history[idx].size() - 1;
 
 		// 트리 키우기
-		/*if (segtree_root[idx] == nullptr || segtree_root[idx]->hi < sz) {
-			Node* new_head = new Node;
-			new_head->lo = 0;
-			if (sz == 0) new_head->hi = 0;
-			else new_head->hi = sz * 2 - 1;
-			new_head->mid = (new_head->lo + new_head->hi) / 2;
+		if (segtree_root[idx] == nullptr || segtree_root[idx]->hi < sz) {
+			int hi;
+			if (sz == 0) hi = 0;
+			else hi = sz * 2 - 1;
+			Node* new_head = NewNode(0, hi);
+
 			new_head->left = segtree_root[idx];
 			segtree_root[idx] = new_head;
 		}
-		InsertST(sz, sum, segtree_root[idx]);*/
-	}
-
-	for (int i = 0; i < lis_cnt; i++)
-		for (int j = history[i].size() - 2; j >= 0; j--)
-			if (history[i][j].first == history[i][j + 1].first)
-				history[i][j].cnt += history[i][j + 1].cnt;
-
-	
-	int back = lis_cnt - 1;
-	for (int i = 0; i < history[back].size(); i++) {
-		if (back == 0) {
-			history[back][i].second = 1;
-			continue;
-		}
-
-		long long tp = DP(lis_cnt - 2, history[back][i].lo, history[back][i].hi);
-		if (tp > MAXK / history[back][i].cnt) history[back][i].second = MAXK;
-		else history[lis_cnt-1][i].second = tp * history[back][i].cnt;
+		InsertST(sz, sum, segtree_root[idx]);
 	}
 
 	vector<int> ans;
 	ans.reserve(n);
 
 	k--;
-	int hi = history[back].size() - 1, lo=0;
-	int prev = 0, mul=1;
-	for (int i = back; i >= 0; i--) {
+	int lo = 0, hi = history[lis_cnt - 1].size() - 1;
+	long long mul = 1;
+	for (int i = lis_cnt - 1; i >= 0; i--) {
 		bool able = false;
 		for (int j = lo; j <= hi; j++) {
-			Dat& now = history[i][j];
+			if (i == 0 && j > lo && history[i][j].num == history[i][j - 1].num) continue;
 
-			long long tp = MAXK;
-			if (now.second <= MAXK / mul) tp = now.second * mul;
+			long long same_cnt = RangeUpperBound(j, hi + 1, i, history[i][j].num) - j;
+			long long sum = 1;
+			if (i > 0)
+				sum = GetSum(history[i][j].lo, history[i][j].hi, segtree_root[i - 1]);
 
-			if (tp <= k) k -= tp;
+			long long tp1;
+			if (mul > MAXK / same_cnt) tp1 = MAXK;
+			else tp1 = mul * same_cnt;
+
+			long long tp2;
+			if (sum > MAXK / tp1) tp2 = MAXK;
+			else tp2 = sum * tp1;
+
+			if (tp2 <= k) {
+				k -= tp2;
+			}
 			else {
-				ans.push_back(now.first);
-				hi = now.hi;
-				lo = now.lo;
-				prev = now.first;
+				ans.push_back(history[i][j].num);
+				lo = history[i][j].lo;
+				hi = history[i][j].hi;
+				mul = tp1;
 				able = true;
-
-				if (mul <= MAXK / now.cnt) mul *= now.cnt;
-				else mul = MAXK;
 				break;
 			}
 		}
