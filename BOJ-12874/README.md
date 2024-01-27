@@ -7,7 +7,7 @@
 
 ### 방법 1 : DP
 * 풀이
-  * $DP(open,close)$ : $open$에서 열리고 $close$에서 닫히는 서로 다른 올바른 괄호 문자열의 개수
+  * https://velog.io/@tktj12/boj-12874
 
 * 시간 복잡도 :
   * $O(N^3)$
