@@ -1,5 +1,5 @@
 # Problem
-* https://algospot.com/judge/problem/read/14517
+* https://www.acmicpc.net/problem/14517
 * 팰린드롬이 되는 부분수열의 개수 구하기
 * 난이도 : 플레티넘 5
 
