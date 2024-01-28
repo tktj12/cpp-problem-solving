@@ -1,5 +1,5 @@
 # Problem
-* https://algospot.com/judge/problem/read/14942
+* https://www.acmicpc.net/problem/14517
 * 체력이 약한 개미들을 햇빛과 가장 가까운 방으로 이동시키기
 * 난이도 : 플레티넘 5
 
