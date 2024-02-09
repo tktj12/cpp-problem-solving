@@ -1,6 +1,6 @@
 # Problem
 * https://www.acmicpc.net/problem/1557
-* 1이 아닌 제곱수로 떨어지지 않는 수 중 K번째 수 구하기
+* 1이 아닌 제곱수로 나누어떨어지지 않는 수 중 K번째 수 구하기
 * 난이도 : 다이아 5
 
 # Solution
