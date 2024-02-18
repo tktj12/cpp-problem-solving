@@ -1,17 +1,18 @@
 #include <iostream>
-#include <cstdlib>
+#include <vector>
+#include <cstring>
 using namespace std;
 
 typedef int KeyType;
 // treap의 한 노드를 저장한다.
-struct Node {
+class Node {
+public:
 	KeyType key;  // 노드에 저장된 원소
 	int priority; // 이 노드의 우선순위
 	int size;     // 이 노드를 루트로 하는 서브트리의 크기
 	Node* left,* right; // 두 자식 노드의 포인터
-	// 생성자에서 난수로 우선순위를 생성하고 size와 left/right를 초기화한다.
-	Node(const KeyType& _key) : key(_key),priority(rand()),
-		size(1),left(nullptr),right(nullptr) {}
+
+	Node() {};
 	void SetLeft(Node* new_left) { left = new_left; CalcSize(); }
 	void SetRight(Node* new_right) { right = new_right; CalcSize(); }
 	// size 멤버를 갱신한다.
@@ -73,37 +74,76 @@ Node* Merge(Node* a,Node* b) {
 }
 
 // root를 루트로 하는 트립에서 key를 지우고 결과 트립의 루트를 반환한다.
-Node* Erase(Node* root,KeyType key) {
-	if (root == nullptr) return root;
+pair<int, Node*> Erase(Node* root,KeyType key) {
+	if (root == nullptr) return { 0,root };
 
+	int less_nums=0;
 	if (root->key == key) {
 		// root를 지우고 양 서브트리를 합친 뒤 반환한다.
+		if(root->left) less_nums = root->left->size;
 		Node* ret = Merge(root->left,root->right);
-		delete root;
-		return ret;
+		return { less_nums, ret };
 	}
-	if (key < root->key)
-		root->SetLeft(Erase(root->left,key));
-	else
-		root->SetRight(Erase(root->right,key));
-	return root;
+
+	if (key < root->key) {
+		pair<int,Node*> tp = Erase(root->left,key);
+		less_nums = tp.first;
+		root->SetLeft(tp.second);
+	}
+	else {
+		less_nums = 1;
+		if (root->left) less_nums += root->left->size;
+
+		pair<int,Node*> tp = Erase(root->right,key);
+		less_nums += tp.first;
+		root->SetRight(tp.second);
+	}
+	return { less_nums,root };
 }
 
-// root를 루트로 하는 트리 중에서 k번째 원소를 반환한다.
-Node* Kth(Node* root,int k) {
-	// 왼쪽 서브트리의 크기를 우선 계산한다.
-	int left_size = 0;
-	if (root->left) left_size = root->left->size;
-	if (k <= left_size) return Kth(root->left,k);
-	if (k == left_size) return root;
-	else return Kth(root->right,k - left_size - 1);
+int N,M;
+int DVD2Key[100001];
+Node new_nodes[200010];
+int node_cnt;
+
+Node* NewNode(const KeyType& _key) {
+	Node* ret = &new_nodes[node_cnt++];
+	ret->key = _key;
+	ret->priority = rand();
+	ret->left = ret->right = nullptr;
+	ret->size = 1;
+	return ret;
 }
 
-// key보다 작은 키값의 수를 반환한다.
-int CountLessThan(Node* root,KeyType key) {
-	if (root == nullptr) return 0;
-	if (root->key >= key)
-		return CountLessThan(root->left,key);
-	int ls = (root->left ? root->left->size : 0);
-	return ls + 1 + CountLessThan(root->right,key);
+int main()
+{
+	cin.tie(nullptr);
+	cout.tie(nullptr);
+	ios::sync_with_stdio(false);
+
+	int tc;
+	cin >> tc;
+	while (tc--) {
+		Node* root = nullptr;
+		node_cnt = 0;
+
+		cin >> N >> M;
+		for (int i = 1; i <= N; i++) {
+			DVD2Key[i] = i;
+			root = Insert(root,NewNode(i));
+		}
+
+		for(int i=0;i<M;i++){
+			int q; cin >> q;
+			pair<int,Node*> tp = Erase(root,DVD2Key[q]);
+			cout << tp.first << ' ';
+			root = tp.second;
+
+			DVD2Key[q] = -i;
+			root = Insert(root,NewNode(-i));
+		}
+		cout << '\n';
+	}
+
+	return 0;
 }
