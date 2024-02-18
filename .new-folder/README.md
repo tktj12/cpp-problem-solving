@@ -1,14 +1,14 @@
 # Problem
 * https://algospot.com/judge/problem/read/
 * 
-* ³­ÀÌµµ : 
+* ë‚œì´ë„ : 
 
 # Solution
 
-### ¹æ¹ı 1 : 
-* Ç®ÀÌ
+### ë°©ë²• 1 : 
+* í’€ì´
   * 
 
-* ½Ã°£ º¹Àâµµ :
+* ì‹œê°„ ë³µì¡ë„ :
   * $O(N)$
 <br></br>
