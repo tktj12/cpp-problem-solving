@@ -40,8 +40,9 @@ int main()
 	for (int i = 0; i < S.size(); i++)
 		if (S[i] == '(') {
 			cout << DP(i, 1);
-			break;
+			return 0;
 		}
 
+	cout << 0;
 	return 0;
 }
