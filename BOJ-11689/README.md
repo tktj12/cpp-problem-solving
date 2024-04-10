@@ -1,25 +1,25 @@
 # Problem
 * https://www.acmicpc.net/problem/11689
-* n°ú ¼­·Î¼ÒÀÎ kÀÇ °³¼ö ±¸ÇÏ±â
-* ³­ÀÌµµ : °ñµå 1
+* nê³¼ ì„œë¡œì†Œì¸ kì˜ ê°œìˆ˜ êµ¬í•˜ê¸°
+* ë‚œì´ë„ : ê³¨ë“œ 1
 
 # Solution
 
-### ¹æ¹ý 1 : ¿ÀÀÏ·¯ ÇÇ(phi) ÇÔ¼ö, Á¤¼ö·Ð, ¼Ò¼ö
-* Ç®ÀÌ
-  * ¿ÀÀÏ·¯ ÇÇ ÇÔ¼ö $\varphi (n)$ÀÇ °ªÀº $gcd(n,k) = 1$ÀÎ $n$ÀÌÇÏÀÇ $k$ÀÇ °³¼öÀÌ´Ù. Áï ÀÌ ¹®Á¦ÀÇ ´ä°ú µ¿ÀÏÇÏ´Ù.
-  * ¿ÀÀÏ·¯ ÇÇ ÇÔ¼öÀÇ ¼ºÁúÀ» È°¿ëÇÏ¿© ¹®Á¦¸¦ Ç¬´Ù. Áï "$\varphi (p^k) = p^k - p^{k-1}$, $p$´Â ¼Ò¼ö"ÀÎ °ÍÀ» 
-  ÀÌ¿ëÇÑ´Ù.
+### ë°©ë²• 1 : ì˜¤ì¼ëŸ¬ í”¼(phi) í•¨ìˆ˜, ì •ìˆ˜ë¡ , ì†Œìˆ˜
+* í’€ì´
+  * ì˜¤ì¼ëŸ¬ í”¼ í•¨ìˆ˜ $\varphi (n)$ì˜ ê°’ì€ $gcd(n,k) = 1$ì¸ $n$ì´í•˜ì˜ $k$ì˜ ê°œìˆ˜ì´ë‹¤. ì¦‰ ì´ ë¬¸ì œì˜ ë‹µê³¼ ë™ì¼í•˜ë‹¤.
+  * ì˜¤ì¼ëŸ¬ í”¼ í•¨ìˆ˜ì˜ ì„±ì§ˆì„ í™œìš©í•˜ì—¬ ë¬¸ì œë¥¼ í‘¼ë‹¤. ì¦‰, $p$ê°€ ì†Œìˆ˜ì¼ ë•Œ $\varphi (p^k) = p^k - p^{k-1}$ ì¸ ê²ƒì„ 
+  ì´ìš©í•œë‹¤.
 
-* ½Ã°£ º¹Àâµµ :
+* ì‹œê°„ ë³µìž¡ë„ :
   * $O(\sqrt{n})$
 <br></br>
 
 # Learning
-* ¿ÀÀÏ·¯ ÇÇ ÇÔ¼ö
+* ì˜¤ì¼ëŸ¬ í”¼ í•¨ìˆ˜
 * https://namu.wiki/w/%EC%98%A4%EC%9D%BC%EB%9F%AC%20%ED%94%BC%20%ED%95%A8%EC%88%98?from=%EC%98%A4%EC%9D%BC%EB%9F%AC%20%ED%8C%8C%EC%9D%B4%20%ED%95%A8%EC%88%98
 * https://ko.wikipedia.org/wiki/%EC%98%A4%EC%9D%BC%EB%9F%AC_%ED%94%BC_%ED%95%A8%EC%88%98
 <br></br>
 
 # Review
-* ¿ÖÂ°¼­ ÀÌ·± ÇÔ¼ö°¡ ÀÖ´Â°¡..
+* ì™œì§¸ì„œ ì´ëŸ° í•¨ìˆ˜ê°€ ìžˆëŠ”ê°€..
