@@ -3,8 +3,7 @@
 const double PI = cos(0) * 2.;
 class Vec {
 public:
-	double x;
-	double y;
+	double x=0,y=0;
 
 	explicit Vec(double _x, double _y) : x(_x), y(_y) {}
 
@@ -25,28 +24,28 @@ public:
 		return Vec(scalar * x, scalar * y);
 	}
 
-	// ±æÀÌ
+	// ê¸¸ì´
 	double norm() const {
 		return hypot(x, y);
 	}
-	// ´ÜÀ§ º¤ÅÍ
+	// ë‹¨ìœ„ ë²¡í„°
 	Vec normalize() const {
 		return Vec(x / norm(), y / norm());
 	}
-	// ³»Àû, ½ºÄ®¶ó ¹İÈ¯
+	// ë‚´ì , ìŠ¤ì¹¼ë¼ ë°˜í™˜
 	double dot(const Vec rhs) const {
 		return x * rhs.x + y * rhs.y;
 	}
-	// ¿ÜÀû, ½ºÄ®¶ó¸¸ ¹İÈ¯
-	// ¹İÈ¯°ªÀÌ ¾ç¼ö¶ó¸é rhs°¡ ¹İ½Ã°è ¹æÇâ 180µµ ¾È¿¡ À§Ä¡ÇÏ°í, À½¼ö¶ó¸é rhs°¡ ½Ã°è¹æÇâ 180µµ ¾È¿¡ À§Ä¡
+	// ì™¸ì , ìŠ¤ì¹¼ë¼ ë°˜í™˜
+	// ë°˜í™˜ê°’ì´ ì–‘ìˆ˜ë¼ë©´ rhsê°€ ë°˜ì‹œê³„ ë°©í–¥ 180ë„ ì•ˆì— ìœ„ì¹˜í•˜ê³ , ìŒìˆ˜ë¼ë©´ rhsê°€ ì‹œê³„ë°©í–¥ 180ë„ ì•ˆì— ìœ„ì¹˜
 	double cross(const Vec rhs) const {
 		return x * rhs.y - rhs.x * y;
 	}
-	// xÃà ¾çÀÇ ¹æÇâ°ú ¹İ½Ã°è ¹æÇâÀ¸·Î ¸î µµ Â÷ÀÌ³ª´ÂÁö
+	// xì¶• ì–‘ì˜ ë°©í–¥ê³¼ ë°˜ì‹œê³„ ë°©í–¥ìœ¼ë¡œ ëª‡ ë„ ì°¨ì´ë‚˜ëŠ”ì§€
 	double polar() const {
-		return fmod(atan2(x, y) + 2. * PI, 2. * PI);
+		return fmod(atan2(y, x) + 2. * PI, 2. * PI);
 	}
-	// this¸¦ rhs·Î »ç¿µÇÑ º¤ÅÍ
+	// thisë¥¼ rhsë¡œ ì‚¬ì˜í•œ ë²¡í„°
 	Vec project(const Vec rhs) const {
 		Vec unit = rhs.normalize();
 		return unit * unit.dot(*this);
